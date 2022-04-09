@@ -58,7 +58,7 @@ Postgres Stuff
 
 
 
-1st BACKEND FOLDER
+1st BACKEND FOLDER  START WITH -> node index.js
 
     Dependecies
         npm init -y -------to initialize 
@@ -81,11 +81,6 @@ Postgres Stuff
 
         write a query to make null values say pending.
         OR  write a if then statement to make null values hidden from UI.
-
-
-
-
-
 
 
 
