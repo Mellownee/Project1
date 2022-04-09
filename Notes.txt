@@ -41,15 +41,16 @@ Postgres Stuff
                 PRIMARY KEY (id)
             );
 
-        form
+        reimbursment form
             CREATE TABLE public.formdetails(
                 id bigserial NOT NULL,
-                empid bigint,
+                empid bigserial,
+                requestno bigint,
                 fullname character varying,
                 reason character varying,
                 amount bigint,
                 summary character varying,
-                response character varying,
+                comments character varying,
                 approved boolean,
                 denied boolean,
                 PRIMARY KEY (id)
@@ -85,8 +86,26 @@ Postgres Stuff
 
 
 04/09
-2nd FRONTEND FOLDER
-    
+2nd FRONTEND FOLDER TERMINAL START WITH -> npm start
+    npx create-react-app frontend
+    npm install axios
+    npm install react-router
+    npm install react-router-dom
+
+    App.js --> has the routes
+
+    Home.js --> is what is shown on UI
+
+    Login.js --> works ***but the role part is not functional or defined in the backend***
+
+    UserRegistration.js --> works but when i made the employee id unique it crashed instead
+        of throwing an error.
+
+    Requests.js --> works but comments will be blank until filled. maybe we can auto fill with *no comments*
+        and a dropdown menu for status where it can be pending aproved or denied.
+
+
+
 
         
 

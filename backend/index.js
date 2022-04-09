@@ -23,17 +23,19 @@ app.use(bodyParser.json())
 app.use(cors());
 
 
-// simple route i put the name of the file so i know the right terminal is running
+// simple get i put the name of the file so i know the right terminal is running
 app.get("/", (req, res) => {
     res.json({ message: 'Hello, the index.js file is running. Stay calm and drink water' });
   });
 
+
+
 //GET SECTION
 
 //http://localhost:3001/login/
-app.get('/login/:empId',(req,res)=> {
-    const empid =req.params.empId
-    poolconn.query('SELECT * FROM users WHERE empid=$1',[empid], (error,results)=>{
+app.get('/login/:Uname',(req,res)=> {
+    const username =req.params.Uname
+    poolconn.query('SELECT * FROM users WHERE username=$1',[username], (error,results)=>{
         if(error){
             throw error;
         }
@@ -41,9 +43,26 @@ app.get('/login/:empId',(req,res)=> {
     })
 }); 
 
+//checks to make sure the same employee id doesnt register again.
+//http://localhost:3001/userByName/user1
+app.get('/userByEmpId/:empId',(req,res)=>{
+
+    const empid =req.params.empId;
+    poolconn.query('SELECT * FROM users WHERE empid=$1',[empid],(error,results)=>{
+        if(error){
+            throw error;
+        }
+        res.status(200).json(results.rows);
+    })
+});
+
+
+
+
+
 //http://localhost:3001/form
 app.get('/form',(req,res)=> {
-    poolconn.query('SELECT fullname, reason, amount, summary FROM formdetails', (error,results)=>{
+    poolconn.query('SELECT * FROM formdetails ', (error,results)=>{
         if(error){
             throw error;
         }
@@ -95,9 +114,9 @@ app.post('/forminfo',(req,res)=>{
 
 //http://localhost:3001/update
 app.put('/update',(req,res)=>{
-    let {id, response} = req.body;
+    let {id, comments} = req.body;
    //INSERT or UPDATE SQL statements we can use to create or update record in table respectively
-    poolconn.query('UPDATE formdetails SET response=$1 WHERE id=$2',[response,id],(error,results)=>{
+    poolconn.query('UPDATE formdetails SET comments=$1 WHERE id=$2',[comments,id],(error,results)=>{
         if(error){
             throw error;
         }
