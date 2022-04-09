@@ -1,0 +1,103 @@
+- PROJECT 1 Summary
+
+    TRMS, or Tuition Reimbursement Management System is a full-stack web application that allows employees 
+    to submit requests for reimbursements for courses, events, and certifications. These requests can then 
+    be approved or rejected by the employee's direct supervisor, department head, and a benefits coordinator
+     while the employee is able to track the status of their requests.
+
+
+
+
+
+04/08
+
+Postgres Stuff
+    DATABASE---
+    projectone --> New Database Name
+    password --> is my postgres password
+
+    TABLES--- just test tables
+
+        users
+            CREATE TABLE public.users(
+                id bigserial NOT NULL,
+                empid bigint,
+                username character varying(30),
+                password character varying(30),
+                roleid bigint,
+                PRIMARY KEY (id)
+            );
+
+
+        userdetails
+            CREATE TABLE public.userdetails(
+                id bigserial NOT NULL,
+                empid bigint,
+                firstname character varying,
+                lastname character varying,
+                username character varying,
+                password character varying,
+                roleid bigint,
+                PRIMARY KEY (id)
+            );
+
+        form
+            CREATE TABLE public.formdetails(
+                id bigserial NOT NULL,
+                empid bigint,
+                fullname character varying,
+                reason character varying,
+                amount bigint,
+                summary character varying,
+                response character varying,
+                approved boolean,
+                denied boolean,
+                PRIMARY KEY (id)
+            );    
+
+
+
+
+1st BACKEND FOLDER
+
+    Dependecies
+        npm init -y -------to initialize 
+        npm install express
+        npm install body-parser
+        npm install pg ------to install postgres
+        npm install nodemon
+        npm install cors
+
+    dbconnections.js- has the code to connect to database.
+
+
+    index.js- has the GET POST PUT DELETE CODE IN IT.
+
+
+
+
+        figure out how to dropdown menu for approve or deny?
+        or do a boolean where null= pending checked = true unchcked = false
+
+        write a query to make null values say pending.
+        OR  write a if then statement to make null values hidden from UI.
+
+
+
+
+
+
+
+
+04/09
+2nd FRONTEND FOLDER
+    
+
+        
+
+
+
+
+
+
+
