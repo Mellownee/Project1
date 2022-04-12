@@ -7,8 +7,8 @@
     <title>Form</title>
 </head>
 <body>
-    <form action="">
-
+    <form action="" name="tuition-form" id="tuition-form">
+        <h2> Tuition Reimbursement Form</h2>
         <fieldset name="form-div" id="employee-info">
             <legend>Employee Info</legend><br>
             <label for="employee-id">Employee Id:</label>
@@ -38,6 +38,7 @@
             <input type="date" id="start-date" name="start-date">
             <label for="end-date">End Date:</label>
             <input type="date" id="end-date" name="end-date"><br>
+            <p>***Submit certificate/receipt to your HR via email! Failure to send documentation may result in non-reimbursement.***</p>
             <button type="button" class="collapse" >Collapse/Expand</button>
         </fieldset><br>
 
@@ -50,6 +51,7 @@
             <label for="class-cost">Cost:</label>
             <input type="number" id="class-cost" name="class-cost"><br>
             <button type="button" class="add-class">Add Course</button><br>
+            <p>***Submit semester receipts to your HR via email! Failure to send documentation may result in non-reimbursement.***</p>
             <button type="button" class="collapse" >Collapse/Expand</button>
             Total: <input type="text" name="tuition-total" id="tuition-total">
         </fieldset><br>
@@ -57,7 +59,7 @@
         <fieldset name="form-div" id="sign-submit">
             <legend>Sign & Submit</legend><br>
             <label for="signature">Enter full name to sign: </label>
-                <input type="text" id="signature" name="signature"><br>
+                <input type="text" id="signature" name="signature" required><br>
             Approving Supervisor: <select name="supervisors" id="supervisors">
                 <option value="" selected="selected-supervisor">Select Supervisor</option>
               </select><br>
