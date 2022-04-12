@@ -32,11 +32,13 @@
             <input type="text" id="instructor-name" name="instructor-name"><br>
             <label for="course-description">Course Description:</label>
             <input type="text" id="course-description" name="course-description"><br>
+            <label for="course-cost">Cost:</label>
+            <input type="number" id="course-cost" name="course-cost"><br>
             <label for="start-date">Start Date:</label>
             <input type="date" id="start-date" name="start-date">
             <label for="end-date">End Date:</label>
             <input type="date" id="end-date" name="end-date"><br>
-            <button type="button" class="collapse" >collapse/expand</button>
+            <button type="button" class="collapse" >Collapse/Expand</button>
         </fieldset><br>
 
         <fieldset name="form-div" id="itemized-tuition">
@@ -47,9 +49,9 @@
             <input type="text" id="class-description" name="class-description">
             <label for="class-cost">Cost:</label>
             <input type="number" id="class-cost" name="class-cost"><br>
-            <button type="button" class="add-class">add class</button>
-            <h5>Total: </h5>
-            <button type="button" class="collapse" >collapse/expand</button>
+            <button type="button" class="add-class">Add Course</button><br>
+            <button type="button" class="collapse" >Collapse/Expand</button>
+            Total: <input type="text" name="tuition-total" id="tuition-total">
         </fieldset><br>
 
         <fieldset name="form-div" id="sign-submit">
@@ -57,11 +59,20 @@
             <label for="signature">Enter full name to sign: </label>
                 <input type="text" id="signature" name="signature"><br>
             Approving Supervisor: <select name="supervisors" id="supervisors">
-                <option value="" selected="selected-supervisor">Select supervisor</option>
+                <option value="" selected="selected-supervisor">Select Supervisor</option>
               </select><br>
+                <textarea rows="4" cols="50" name="comment" id="comment">
+                Enter text here...</textarea><br>
                 <button type="submit">Submit</button>
         </fieldset>
     </form>
+
+    <script type="text/javascript">
+    function getTotal(){
+        var tot=0;
+        document.getElementById('total').value = tot;
+    }
+    </script>
     
 </body>
 </html>
