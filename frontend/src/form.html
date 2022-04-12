@@ -53,10 +53,13 @@
         </fieldset><br>
 
         <fieldset name="form-div" id="sign-submit">
-            <legend>Sign & Submit</legend>
-                <label for="signature">Enter full name to sign: </label>
+            <legend>Sign & Submit</legend><br>
+            <label for="signature">Enter full name to sign: </label>
                 <input type="text" id="signature" name="signature"><br>
-                <input type="submit">
+            Approving Supervisor: <select name="supervisors" id="supervisors">
+                <option value="" selected="selected-supervisor">Select supervisor</option>
+              </select><br>
+                <button type="submit">Submit</button>
         </fieldset>
     </form>
     
