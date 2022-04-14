@@ -9,7 +9,7 @@ function BenefitsCoor(){
 
     const [newSuperMessage, setNewSuperMessage] = useState("");
     const [newStatus, setNewStatus] = useState("");
-    const [newBenifitsCoor, setNewBenifitsCoor] = useState("");
+    const [newBenefitsCoor, setNewBenefitsCoor] = useState("");
 
     
     const [reimbursementForm, setReimbursementForm] = useState([]);
@@ -19,13 +19,13 @@ function BenefitsCoor(){
     
 
     const getForm = () => {
-        Axios.get("http://localhost:3001/benifitsco").then((response) => {
+        Axios.get("http://localhost:3001/benefitscoor").then((response) => {
           setReimbursementForm(response.data);
         });
       };
     
       const updateComments = (id) => {
-        Axios.put(`http://localhost:3001/benefits/${id}`, { id: id ,  supermessage: newSuperMessage, status: newStatus, benifitscoor: newBenifitsCoor,}).then(
+        Axios.put(`http://localhost:3001/benefits/${id}`, { id: id ,  supermessage: newSuperMessage, status: newStatus, benefitscoor: newBenefitsCoor,}).then(
           (response) => {
             setReimbursementForm(
                 reimbursementForm.map((val) => {
@@ -48,7 +48,7 @@ function BenefitsCoor(){
                       depthead: val.depthead,
 
                       status: newStatus,
-                      benifitscoor: newBenifitsCoor,
+                      benefitscoor: newBenefitsCoor,
                       supermessage: newSuperMessage,
                     }
                   : val;
@@ -104,7 +104,7 @@ function BenefitsCoor(){
                 <h3>status: {val.status}</h3>
                 <h3>supermessage: {val.supermessage}</h3>
                 <h3>depthead: {val.depthead}</h3>
-                <h3>benefitscoor: {val.benifitscoor}</h3>
+                <h3>benefitscoor: {val.benefitscoor}</h3>
 
                 <p>---------------------------------</p>
               </div>
@@ -122,7 +122,7 @@ function BenefitsCoor(){
                 type="text"
                 placeholder="benefitcoor? yes or no"
                 onChange={(event) => {
-                    setNewBenifitsCoor(event.target.value);
+                    setNewBenefitsCoor(event.target.value);
                 }}
               />
 

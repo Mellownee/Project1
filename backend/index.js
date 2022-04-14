@@ -110,10 +110,10 @@ app.get('/departmenthead',(req,res)=> {
 
 }); 
 
-//http://localhost:3001/benifitsco
+//http://localhost:3001/benefitscoor
 
-app.get('/benifitsco',(req,res)=> {
-    poolconn.query(`SELECT * FROM reimbursmentform WHERE status = 'pending' AND benifitscoor = 'yes' ORDER BY id asc`, (error,results)=>{
+app.get('/benefitscoor',(req,res)=> {
+    poolconn.query(`SELECT * FROM reimbursmentform WHERE status = 'pending' AND benefitscoor = 'yes' ORDER BY id asc`, (error,results)=>{
         if(error){
             throw error;
         }
@@ -198,10 +198,10 @@ app.put('/supervisor/:Id',(req,res)=>{
 //http://localhost:3001/update
 app.put('/manager/:Id',(req,res)=>{
     const id =req.params.Id;
-    let {status, supermessage, benifitscoor} = req.body;
+    let {status, supermessage, benefitscoor} = req.body;
    //INSERT or UPDATE SQL statements we can use to create or update record in table respectively
     //SINCE WERE CHECKING THE ID MATCHES FIRST IT NEEDS TO BE $1 THIS GOT ME STUCK FOR 4 DAYS!!!! 
-   poolconn.query('UPDATE reimbursmentform SET status= $2, supermessage=$3, benifitscoor=$4 WHERE id=$1',[id, status, supermessage,benifitscoor],(error,results)=>{
+   poolconn.query('UPDATE reimbursmentform SET status= $2, supermessage=$3, benefitscoor=$4 WHERE id=$1',[id, status, supermessage,benefitscoor],(error,results)=>{
         if(error){
             console.log(error);
             throw error;
@@ -214,10 +214,10 @@ app.put('/manager/:Id',(req,res)=>{
 //http://localhost:3001/update
 app.put('/benefits/:Id',(req,res)=>{
     const id =req.params.Id;
-    let {status, supermessage, benifitscoor} = req.body;
+    let {status, supermessage, benefitscoor} = req.body;
    //INSERT or UPDATE SQL statements we can use to create or update record in table respectively
     //SINCE WERE CHECKING THE ID MATCHES FIRST IT NEEDS TO BE $1 THIS GOT ME STUCK FOR 4 DAYS!!!! 
-   poolconn.query('UPDATE reimbursmentform SET status= $2, supermessage=$3, benifitscoor=$4 WHERE id=$1',[id, status, supermessage,benifitscoor],(error,results)=>{
+   poolconn.query('UPDATE reimbursmentform SET status= $2, supermessage=$3, benefitscoor=$4 WHERE id=$1',[id, status, supermessage,benefitscoor],(error,results)=>{
         if(error){
             console.log(error);
             throw error;
