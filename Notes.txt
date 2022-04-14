@@ -16,6 +16,37 @@ Postgres Stuff
     projectone --> New Database Name
     password --> is my postgres password
 
+    New tables 
+        CREATE TABLE public.reimbursmentform
+        (
+            id serial NOT NULL,
+            empid bigint,
+            password character varying,
+            fullname character varying,
+            dept character varying,
+            title character varying,
+            eventname character varying,
+            facilitator character varying,
+            startdate date,
+            enddate date,
+            description character varying,
+            total bigint,
+            certificationname character varying,
+            empmessage character varying,
+            empsignature character varying,
+            todaysdate date,
+            status character varying,
+            supervisor boolean default true,
+            depthead boolean,
+            benifitscoor boolean,
+            supermessage character varying,
+            PRIMARY KEY (id)
+        );
+
+
+
+
+
     TABLES--- just test tables
 
         users
@@ -109,9 +140,32 @@ Postgres Stuff
 
         
 
+04/12
+
+STOPPING TO STUDY FOR QC 
+
+STILL NEED TO GET THE FORM TO THE FRONT END FOR THE INDIVIDUAL SUPERVISORS
+AND HAVE A WAY TO ADD YES TO A SUPEVISORS COLUMN IN ORDER FOR THEM TO SEE IT ON THEIR DASHBOARD
+ALSO A ALL FORMS SECTION ON ITS OWN PAGE.
+
+04/13
+
+supervisor -> can approve deny or pass it up to the manager for approval
+all pending requests will be in the supervisors inbox
+
+SELECT * FROM reimbursmentform WHERE status = 'pending' ORDER BY id asc
+'UPDATE reimbursmentform SET status= $2, supermessage=$3, depthead=$4 WHERE id=$1'
+
+
+manager -> can approve deny or pass it up to the benefits coordinator for approval
+if supervisor passes it up it appears in managers inbox
+
+SELECT * FROM reimbursmentform WHERE status = 'pending' AND depthead = yes ORDER BY id asc
 
 
 
+benefits coordinator-> can approve or deny 
+if manager passes it up it appears in BCs inbox
 
 
 
