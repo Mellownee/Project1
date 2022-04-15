@@ -4,7 +4,7 @@ import React, { useState} from "react";
 import { Link,Outlet } from "react-router-dom";
 // import "../styles.css";
 import axios from 'axios';
-import Header1 from "./Header1";
+
 
 function Admin() {
     /**
@@ -89,8 +89,13 @@ function Admin() {
   // Additionally, we will also add error messages below every form input element.
   const renderForm = (
       <>
-      <Header1/>
-    <div className="form">
+       <div className="title">Admin</div>
+     
+      <nav className="navigate">  
+           <Link to="/"> Home</Link>
+       </nav>
+
+    <div className="container" id="container1">
         
       <form onSubmit={handleSubmit}>
         <div className="input-container">
@@ -107,11 +112,10 @@ function Admin() {
           <input type="submit" />
         </div>
         <div>
-            <nav>
-           
-                    <Link to="/"> Home</Link>
-           
-            </nav>
+
+      
+
+       
             <Outlet />
         </div>
       </form>
@@ -122,7 +126,7 @@ function Admin() {
   return (
     <div className="app">
     <div className="login-form">
-      <div className="title"></div>
+      <div className=""></div>
       {isSubmitted ? 
                     (isAdminUser ? <div>Admin user is successfully logged in </div> : <div>User is successfully logged in</div>)  
       : renderForm}

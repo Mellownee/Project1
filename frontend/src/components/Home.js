@@ -1,7 +1,9 @@
 
 import { Link,Outlet } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css'
-import Header from "./Header";
+import images from "../assets/images/traveling.jpg"
+import expenses from "../assets/images/expenses.jpg";
+import education from "../assets/images/education.jpg"
+
 import Footer from "./Footer";
 
 /**
@@ -12,8 +14,8 @@ function Home(){
     return (
         <>
 
-<Header/>
-< nav  className="bg-primary text-light mb-4 py-3 flex-row align-center">
+<div className="title">Welcome</div>
+< nav  className="bg-primary1 text-light mb-4 py-3 flex-row align-center">
       <div className="container flex-row justify-space-between-lg justify-center align-center">
         
 
@@ -25,51 +27,48 @@ function Home(){
           <h1 className="m-0">Login</h1>
         </Link>
 
-        <Link className="text-light" to="/Reimbursment">
-          <h1 className="m-0">Requests</h1>
+        
+         
+        <Link className="text-light" to="/Dashboard">
+          <h1 className="m-0">Dashboard</h1>
         </Link>
+
+        
+       
         </div>
 
 </nav>
             
               
-            <ul>
-                <li>
-                    
-                    <Link to="/login"> Login</Link>
-                    <br/>
-                    <Link to="/Admin">Go to the Admin page</Link>
-                    <br/>
-                    <Link to="/Manager">Go to the Manager page</Link>
-                    <br/>
-                    <Link to="/Supervisor">Go to the Supervisor page</Link>
-                    <br/>
-                    <Link to="/userregistration"> UserRegistration</Link>
-                    <br/>
-                    {/* <Link to="/form"> Form</Link> */}
-                    <Link to="/reimbursment">Reimbursment</Link>
-                   
 
-                </li>
-               
-            </ul>
-
-            <h1>kjnsdcjkndkckc</h1>
-            <h1>kjadjhSD</h1>
-
-            <h1>kjnsdcjkndkckc</h1>
-            <h1>kjadjhSD</h1>
-
-            <h1>kjnsdcjkndkckc</h1>
-            <h1>kjadjhSD</h1>
-
-
-            <h1>kjnsdcjkndkckc</h1>
-            <h1>kjadjhSD</h1>
-
+<div class="card" >
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <img className="mb-5"  src={education} />
+  
+  </div>
+</div>
+<div class="card" >
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <img className="mb-5"  src={expenses} />
+  </div>
+</div>
+<div class="card" >
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <img className="mb-5"  src={images} />
+  </div>
+</div>
            
             
-            <Outlet />
+         
             
   
 

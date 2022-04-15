@@ -103,8 +103,19 @@ function Reimbursment() {
   // THIS SECTION IS THE FORM IT CAN BE CHANGED TO ADDED TO HAVE MORE FIELDS 
   //THEY JUST NEED TO BE SET AS A STATE AT THE TOP
   return (
-    <div className="App">
-      <div className="information">
+
+<>
+
+<nav>
+  <h1 className="bg-primary1"> Reinbursment Form</h1>
+  <nav className="navigate">  
+           <Link to="/"> Home</Link>
+       </nav>
+</nav>
+
+
+    <div className="container" id="container1">
+      <div className="input-container">
         <label>Employee Id:</label>
         <input
           type="text"
@@ -112,6 +123,7 @@ function Reimbursment() {
             setEmpid(event.target.value);
           }}
         />
+        
         <label>Full Name:</label>
         <input
           type="text"
@@ -140,17 +152,15 @@ function Reimbursment() {
             setSummary(event.target.value);
           }}
         />
-        <button onClick={addForm}>New Request</button>
+           
+   
+        <button  onClick={addForm}>New Request</button>
       </div>
       <div className="form">
         <button onClick={getForm}>Show Requests</button>
         {/* just a link to not get stuck */}
         <div>
-            <nav>
-           
-                    <Link to="/"> Home</Link>
-           
-            </nav>
+          
             <Outlet />
         </div>
 
@@ -194,6 +204,7 @@ function Reimbursment() {
                 </button>
               </div>
             </div>
+            
           );
         })}
       </div>
@@ -209,6 +220,7 @@ function Reimbursment() {
         </div>
 
     </div>
+    </>
   );
 }
 

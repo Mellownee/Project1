@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
     res.send('Home Page');
 })
 
-app.get('/dashboard', (req, res) => {
+app.get('/Dashboard', (req, res) => {
     res.send('Dashboard Page');
 })
 
