@@ -4,7 +4,7 @@ import React, { useState} from "react";
 import { Link,Outlet } from "react-router-dom";
 // import "../styles.css";
 import axios from 'axios';
-import Header1 from "./Header1";
+import Header1 from "./Headers/Header1";
 
 function Admin() {
     /**
