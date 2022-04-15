@@ -8,6 +8,26 @@
 
 
 
+How to merge branches!
+
+first commit and push branch
+
+    commit (you can commit in the terminal with git commit or click the symbol on the 
+    left that looks like 3 balls on a string leave a message where it says message and cmd enter.
+
+    then open terminal and do git push the merge branch.
+
+
+Next make sure your in the main branch -> open terminal 
+
+    git pull -> make sure its all up to date
+
+    THEN git merge "the name of your branch"
+
+    LAST git push
+
+That's it, you are done.
+
 
 04/08
 
