@@ -65,7 +65,18 @@ function ReimbursmentForm() {
 
 
   return (
-    <div className="App">
+
+<>
+<div className="title">Dashboard </div>
+
+     
+<nav className="navigate">  
+     <Link to="/"> Home</Link> 
+ </nav>
+
+    <div className="container" id="container1">
+
+    
       <div className="information">
 
         <div>
@@ -247,16 +258,19 @@ function ReimbursmentForm() {
         {/* just a link to not get stuck */}
 
 
-      <div>
-            <nav>
-           
-                    <Link to="/"> Home</Link>
-           
-            </nav>
-            <Outlet />
-        </div>
+   </div>
 
-    </div>
+
+
+        
+          
+   
+
+  
+
+    </>
+
+
   );
   
 }

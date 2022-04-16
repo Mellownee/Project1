@@ -23,66 +23,91 @@ const getForm = () => {
 
 
   return (
-    <div className="App">
 
-      <div className="form">
+    <>
+    <div className="title">Dashboard </div>
+  
+    <nav className="navigate">  
+         <Link to="/"> Home</Link> 
+     </nav>
+
+     <div className="container" id="container1">
         <button onClick={getForm}>Show Requests</button>
         {/* just a link to not get stuck */}
         <div>
-            <nav>
-           
-                    <Link to="/"> Home</Link>
-           
-            </nav>
-            <Outlet />
+         
+
+   
         </div>
 
         {/* THIS IS HOW THE GET REQUEST IS DIPLAYED THEY CAN BE ON THE SAME LINE OR IN A PARAGRAPH FORM I JUST LISTED THEM TO TELL THEM APART*/}
         {reimbursementForm.map((val, key) => {
           return (
-            <div className="form">
-              <div>
-              <h3>Full Name: {val.fullname}</h3>
-                <h3>dept: {val.dept}</h3>
-                <h3>title: {val.title}</h3>
-                <h3>eventname: {val.eventname}</h3>
-                <h3>facilitator: {val.facilitator}</h3>
-                <h3>startdate: {val.startdate}</h3>
-                <h3>enddate: {val.enddate}</h3>
-                <h3>eventname: {val.eventname}</h3>
-                <h3>description: {val.description}</h3>
-                <h3>total: {val.total}</h3>
-                <h3>certificationname: {val.certificationname}</h3>
-                <h3>empmessage: {val.empmessage}</h3>
-                <h3>empsignature: {val.empsignature}</h3>
-                <h3>todaysdate: {val.todaysdate}</h3>
-                <h3>status: {val.status}</h3>
-                <h3>supermessage: {val.supermessage}</h3>
-                <h3>depthead: {val.depthead}</h3>
-                <h3>benefitscoor: {val.benifitscoor}</h3>
 
-                <p>---------------------------------</p>
+           
+            <div className="my-3" >
+            <h3 className="card-header bg-dark text-light p-2 m-0"></h3>
+                    <div>
+               
+                    <div className="bg-light py-4">
+              <blockquote
+                className="p-4"
+                style={{
+                  fontSize: '1.5rem',
+                  fontStyle: 'italic',
+                  border: '2px dotted #1a1a1a',
+                  lineHeight: '1.5',
+                }}
+              >
+               Full Name: {val.fullname}<br/>
+               dept: {val.dept}<br/>
+               
+               title: {val.title}<br/>
+              eventname: {val.eventname}<br/>
+              facilitator: {val.facilitator}<br/>
+              startdate: {val.startdate}<br/>
+              enddate: {val.enddate}<br/>
+              eventname: {val.eventname}<br/>
+              description: {val.description}<br/>
+                      total: {val.total}<br/>
+                      certificationname: {val.certificationname}<br/>
+                      empmessage: {val.empmessage}<br/>
+                      empsignature: {val.empsignature}<br/>
+                      todaysdate: {val.todaysdate}<br/>
+                      status: {val.status}<br/>
+                      supermessage: {val.supermessage}<br/>
+                      depthead: {val.depthead}<br/>
+                      benefitscoor: {val.benifitscoor}<br/>
+                   
+              </blockquote>
+           
               </div>
-            </div>
+                  </div>
+                  </div>
+
           );
+          
+
+      
         })}
       </div>
               {/* just a link to not get stuck at the bottom in case theres a long list*/}
 
       <div>
-            <nav>
-           
-                    <Link to="/"> Home</Link>
-           
-            </nav>
-            <Outlet />
+
+          
+          
         </div>
 
-    </div>
+    </>
+    
+
   );
 
 
 
 }
+
+
 
 export default Archive;
