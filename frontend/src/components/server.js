@@ -1,9 +1,3 @@
-// const express = require ('express');
-// const app = express ();
-// const { users } = require('.data');
-// const reimbursementRouter = require('./routes/reimbursement');
-
-
 
 app.use(express.json());
 app.use(setUser);

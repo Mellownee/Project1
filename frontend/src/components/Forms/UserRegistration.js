@@ -1,6 +1,6 @@
 import React, { useState} from "react";
 import { Link,Outlet } from "react-router-dom";
-import "../styles.css";
+
 import axios from 'axios';
 
 function UserRegistration() {
@@ -56,7 +56,9 @@ function UserRegistration() {
     /***/
 
     const renderForm = (
-        <div className="form">
+
+     
+        <div className="container" id="container1">
           <form onSubmit={handleSubmit}>
              <div className="input-container">
               <label>Employee Id # </label>
@@ -85,11 +87,7 @@ function UserRegistration() {
               <input type="submit" />
             </div>
             <div>
-                <nav>
-               
-                        <Link to="/"> Home</Link>
-               
-                </nav>
+         
                 <Outlet />
             </div>
           </form>
@@ -99,7 +97,11 @@ function UserRegistration() {
 
     <div className="app">
       <div className="login-form">
+     
         <div className="title">User Registration</div>
+        <nav className="navigate">  
+           <Link to="/"> Home</Link>
+       </nav>
         {isSubmitted ? 
                      <div>User Registered successfully </div>   
         : renderForm}

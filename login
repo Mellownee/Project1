@@ -1,6 +1,6 @@
 import React, { useState} from "react";
 import { Link,Outlet } from "react-router-dom";
-
+// import "../styles.css";
 import axios from 'axios';
 
 function Login() {
@@ -85,58 +85,46 @@ function Login() {
   // input type=”submit” to allow users to submit the form.
   // Additionally, we will also add error messages below every form input element.
   const renderForm = (
-   
-
-    <div className= "container" id="container1">
-      <form class="form-control" id="floatingInput" placeholder="Username" onSubmit={handleSubmit}>
+    <div className="form">
+      <form onSubmit={handleSubmit}>
         <div className="input-container">
-          <label for ="floatingInput">Username </label>
+          <label>Username </label>
           <input type="text" name="uname" required />
           {renderErrorMessage("uname")}
         </div>
-
-        <div className="input-container" id="floatingInput" placeholder="Password">
-          <label for="floatingInput">Password </label>
+        <div className="input-container">
+          <label>Password </label>
           <input type="password" name="pass" required />
           {renderErrorMessage("pass")}
         </div>
-        <div class="col-12">
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </div>
-
-      
-     
+        <div className="button-container">
+          <input type="submit" />
+        </div>
         <div>
 
-     
+
       
 
 
 
 
-          
+            <nav>
+           
+                    <Link to="/"> Home</Link>
+           
+            </nav>
             <Outlet />
         </div>
       </form>
     </div>
-   
   );
 
   return (
     <div className="app">
       <div className="login-form">
-        <div className="title">Sign in</div>
-        <nav className="navigate">  
-           <Link to="/"> Home</Link>
-       </nav>
+        <div className="title">Sign In</div>
         {isSubmitted ? 
-                      (isAdminUser ? <div>Admin user is successfully logged in </div> : <div> 
-                        <>
-                      <nav className="navigate">  
-                      <Link to="/Asmin">Admin</Link> 
-                  </nav>
-                  </>
-                  </div>)  
+                      (isAdminUser ? <div>Admin user is successfully logged in </div> : <div>User is successfully logged in</div>)  
         : renderForm}
       </div>
     </div>
