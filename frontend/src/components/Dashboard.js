@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 
 import Home from './Home';
-import Admin from './Admin'
+import Admin from './Dashboards/Admin'
 import Manager from './Manager';
 import Supervisor from './Supervisor';
-import Reimbursment from './Requests';
+import Reimbursment from '../../not used but still Useful/Requests';
 
 
 

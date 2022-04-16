@@ -29,10 +29,14 @@ function Home(){
 
         
          
-        <Link className="text-light" to="/Dashboard">
-          <h1 className="m-0">Dashboard</h1>
+        <Link className="text-light" to="/Archive">
+          <h1 className="m-0">Archive</h1>
         </Link>
 
+
+        <Link className="text-light" to="/ReimbursmentForm">
+          <h1 className="m-0">ReimbursmentForm</h1>
+        </Link>
         
        
         </div>

@@ -1,15 +1,21 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
-
-import Login from './Login';
+//HOME.JS HAS ALL THE LINKS YOU JUST HAVE TO MAKE THE ROUTE PATHS ON THIS PAGE
 import Home from './Home';
-import Admin from './Admin'
-import Manager from './Manager';
-import Supervisor from './Supervisor';
-import UserRegistration from './UserRegistration';
-// import Form from './Form';
-import Reimbursment from './Requests';
-import Dashboard from './Dashboard';
 
+// USER IMPORT SECTION
+import Admin from './Dashboards/Admin';
+import BenefitsCoor from './Dashboards/BenefitsCoor';
+import Employee from './Dashboards/Employee';
+import Manager from './Dashboards/Manager';
+import Supervisor from './Dashboards/Supervisor';
+import Archive from './Dashboards/Archive';
+
+
+
+// FORM IMPORT SECTIONS
+import Login from './Forms/Login';
+import ReimbursmentForm from './Forms/ReimbursmentForm';
+import UserRegistration from './Forms/UserRegistration';
 
 
 
@@ -20,17 +26,33 @@ import Dashboard from './Dashboard';
 function App(){
     return(
         <>
-
-<BrowserRouter>
+   
+        <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/Admin" element ={<Admin/>}/>
-                <Route path="/Manager" element = {<Manager/>}/>
-                <Route path="/Supervisor" element ={<Supervisor/>}/>
-                <Route path="/login" element={<Login />} />
-                <Route path="/userregistration" element={<UserRegistration />} />
-                <Route path="/reimbursment" element={<Reimbursment />} />
-                <Route path="/Dashboard" element={<Dashboard/>}/>
+
+            {/* HOME HAS THE LINKS */}
+            <Route path="/" element={<Home />} />
+
+
+            {/* USER IMPORT SECTION */}
+            <Route path="/Admin" element={<Admin />} />
+            <Route path="/BenefitsCoor" element={<BenefitsCoor />} />
+            <Route path="/Employee" element={<Employee />} />
+            <Route path="/Manager" element={<Manager />} />
+            <Route path="/Supervisor" element={<Supervisor />} />
+            <Route path="/Archive" element={<Archive />} />
+
+
+
+            {/* FORM IMPORT SECTIONS */}
+            <Route path="/login" element={<Login />} />
+            <Route path="/userregistration" element={<UserRegistration />} />
+            <Route path="/ReimbursmentForm" element={<ReimbursmentForm />} />
+
+
+            {/* <Route path="/form" element={<Form />} /> */}
+
+
                 
 
             </Routes>

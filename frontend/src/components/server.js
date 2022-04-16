@@ -1,9 +1,3 @@
-// const express = require ('express');
-// const app = express ();
-// const { users } = require('.data');
-// const reimbursementRouter = require('./routes/reimbursement');
-
-
 
 app.use(express.json());
 app.use(setUser);
@@ -13,7 +7,7 @@ app.get('/', (req, res) => {
     res.send('Home Page');
 })
 
-app.get('/Dashboard', (req, res) => {
+app.get('/dashboard', (req, res) => {
     res.send('Dashboard Page');
 })
 
