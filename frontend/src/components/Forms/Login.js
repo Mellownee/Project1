@@ -130,7 +130,13 @@ function Login() {
            <Link to="/"> Home</Link>
        </nav>
         {isSubmitted ? 
-                      (isAdminUser ? <div>Admin user is successfully logged in </div> : <div>User is successfully logged in</div>)  
+                      (isAdminUser ? <div>Admin user is successfully logged in </div> : <div> 
+                        <>
+                      <nav className="navigate">  
+                      <Link to="/Asmin">Admin</Link> 
+                  </nav>
+                  </>
+                  </div>)  
         : renderForm}
       </div>
     </div>
