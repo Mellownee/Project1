@@ -4,11 +4,9 @@ import React, { useState} from "react";
 import { Link,Outlet } from "react-router-dom";
 // import "../styles.css";
 import axios from 'axios';
-<<<<<<< HEAD
 
-=======
-import Header1 from "./Headers/Header1";
->>>>>>> main
+
+
 
 function Admin() {
     /**
