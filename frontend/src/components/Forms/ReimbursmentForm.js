@@ -65,6 +65,7 @@ function ReimbursmentForm() {
 
 
   return (
+<<<<<<< HEAD
 <>
 <div className="title">Dashboard </div>
 
@@ -74,6 +75,9 @@ function ReimbursmentForm() {
  </nav>
 
     <div className="container" id="container1">
+=======
+    <div className="App">
+>>>>>>> main
       <div className="information">
 
         <div>
@@ -256,12 +260,23 @@ function ReimbursmentForm() {
 
 
       <div>
+<<<<<<< HEAD
            
+=======
+            <nav>
+           
+                    <Link to="/"> Home</Link>
+           
+            </nav>
+>>>>>>> main
             <Outlet />
         </div>
 
     </div>
+<<<<<<< HEAD
     </>
+=======
+>>>>>>> main
   );
   
 }

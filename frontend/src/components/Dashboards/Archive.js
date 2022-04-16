@@ -23,6 +23,7 @@ const getForm = () => {
 
 
   return (
+<<<<<<< HEAD
     <>
     <div className="title">Dashboard </div>
   
@@ -35,11 +36,26 @@ const getForm = () => {
         {/* just a link to not get stuck */}
         <div>
          
+=======
+    <div className="App">
+
+      <div className="form">
+        <button onClick={getForm}>Show Requests</button>
+        {/* just a link to not get stuck */}
+        <div>
+            <nav>
+           
+                    <Link to="/"> Home</Link>
+           
+            </nav>
+            <Outlet />
+>>>>>>> main
         </div>
 
         {/* THIS IS HOW THE GET REQUEST IS DIPLAYED THEY CAN BE ON THE SAME LINE OR IN A PARAGRAPH FORM I JUST LISTED THEM TO TELL THEM APART*/}
         {reimbursementForm.map((val, key) => {
           return (
+<<<<<<< HEAD
            
             <div className="my-3" >
             <h3 className="card-header bg-dark text-light p-2 m-0"></h3>
@@ -83,21 +99,64 @@ const getForm = () => {
 
           );
           
+=======
+            <div className="form">
+              <div>
+              <h3>Full Name: {val.fullname}</h3>
+                <h3>dept: {val.dept}</h3>
+                <h3>title: {val.title}</h3>
+                <h3>eventname: {val.eventname}</h3>
+                <h3>facilitator: {val.facilitator}</h3>
+                <h3>startdate: {val.startdate}</h3>
+                <h3>enddate: {val.enddate}</h3>
+                <h3>eventname: {val.eventname}</h3>
+                <h3>description: {val.description}</h3>
+                <h3>total: {val.total}</h3>
+                <h3>certificationname: {val.certificationname}</h3>
+                <h3>empmessage: {val.empmessage}</h3>
+                <h3>empsignature: {val.empsignature}</h3>
+                <h3>todaysdate: {val.todaysdate}</h3>
+                <h3>status: {val.status}</h3>
+                <h3>supermessage: {val.supermessage}</h3>
+                <h3>depthead: {val.depthead}</h3>
+                <h3>benefitscoor: {val.benifitscoor}</h3>
+
+                <p>---------------------------------</p>
+              </div>
+            </div>
+          );
+>>>>>>> main
         })}
       </div>
               {/* just a link to not get stuck at the bottom in case theres a long list*/}
 
       <div>
+<<<<<<< HEAD
           
           
         </div>
 
     </>
     
+=======
+            <nav>
+           
+                    <Link to="/"> Home</Link>
+           
+            </nav>
+            <Outlet />
+        </div>
+
+    </div>
+>>>>>>> main
   );
 
 
 
 }
+<<<<<<< HEAD
    
+=======
+
+>>>>>>> main
 export default Archive;

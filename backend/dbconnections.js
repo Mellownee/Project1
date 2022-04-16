@@ -6,6 +6,7 @@ const pool = new Pool({
     user:'postgres',
     host:'localhost',
     database:'projectone',
+    //make sure your postgress password matches
     password:'salima123',
     port:5432
 });

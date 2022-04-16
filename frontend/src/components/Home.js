@@ -44,6 +44,51 @@ function Home(){
 </nav>
             
               
+<<<<<<< HEAD
+=======
+            <ul>
+                <li>
+                    
+                    <Link to="/login"> Login</Link>
+                    <br/>
+                    <Link to="/Admin">Go to the Admin page</Link>
+                    <br/>
+                    <Link to="/BenefitsCoor">BenefitsCoor</Link>
+                    <br/>
+                    <Link to="/Employee">Employee</Link>
+                    <br/>
+                    <Link to="/Manager">Go to the Manager page</Link>
+                    <br/>
+                    <Link to="/Supervisor">Go to the Supervisor page</Link>
+                    <br/>
+                    <Link to="/Archive">Archive</Link>
+
+
+
+                    <br/>
+                    <Link to="/userregistration"> UserRegistration</Link>
+                    <br/>
+                    {/* <Link to="/form"> Form</Link> */}
+                    <Link to="/ReimbursmentForm">Reimbursment Form</Link>
+                   
+
+                </li>
+               
+            </ul>
+
+            <h1>kjnsdcjkndkckc</h1>
+            <h1>kjadjhSD</h1>
+
+            <h1>kjnsdcjkndkckc</h1>
+            <h1>kjadjhSD</h1>
+
+            <h1>kjnsdcjkndkckc</h1>
+            <h1>kjadjhSD</h1>
+
+
+            <h1>kjnsdcjkndkckc</h1>
+            <h1>kjadjhSD</h1>
+>>>>>>> main
 
 <div class="card" >
   <div class="card-body">

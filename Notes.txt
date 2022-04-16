@@ -8,6 +8,26 @@
 
 
 
+How to merge branches!
+
+first commit and push branch
+
+    commit (you can commit in the terminal with git commit or click the symbol on the 
+    left that looks like 3 balls on a string leave a message where it says message and cmd enter.
+
+    then open terminal and do git push the merge branch.
+
+
+Next make sure your in the main branch -> open terminal 
+
+    git pull -> make sure its all up to date
+
+    THEN git merge "the name of your branch"
+
+    LAST git push
+
+That's it, you are done.
+
 
 04/08
 
@@ -15,6 +35,47 @@ Postgres Stuff
     DATABASE---
     projectone --> New Database Name
     password --> is my postgres password
+
+    New tables 
+        CREATE TABLE public.reimbursmentform
+        (
+            id serial NOT NULL,
+            empid bigint,
+            password character varying,
+            fullname character varying,
+            dept character varying,
+            title character varying,
+            eventname character varying,
+            facilitator character varying,
+            startdate date,
+            enddate date,
+            description character varying,
+            total bigint,
+            certificationname character varying,
+            empmessage character varying,
+            empsignature character varying,
+            todaysdate date,
+            status character varying,
+            supervisor boolean default true,
+            depthead character varying,
+            benefitscoor character varying,
+            supermessage character varying,
+            PRIMARY KEY (id)
+        );
+
+
+        INSERT INTO reimbursmentform (empid, password, fullname, dept, title, eventname, facilitator, startdate, enddate, description, total, empmessage, empsignature, todaysdate, certificationname, status ) 
+        VALUES ('1234','password','Halwa Sofe','Safety','Safety Liaison','Health and Wellness forum','J&J','2022-01-01','2022-01-02','Help your employees proactively manage a wide variety of issues including Exercise and Nutrition, Brain Fitness, and staying healthy all year long.',395,'Learned tips on how to achieve wellness goals and integrate healthy habits in the workplace.','Halwa Sofe','2022-01-07','','pending'),
+        ('2234','password','Anthony Roach','UX Design','intern','Computer Science BS','Local State University','2021-05-01','2022-02-02','With a BS program, you can expect to select a concentration or specialization, take more technical courses, and learn in-depth about a specific area. Some examples of courses offered in the BS track are calculus, physics, analysis of data structures and algorithms, and theory of computation.',9482.64,'I Love Front End! You get to work on a variety of interesting things. Front end development work is seen by everyone who interacts with a brand.','Anthony Roach','2022-02-11','','pending'),
+        ('3234','password','Marcus Rey','Security','Security guard lv.3','Retirement For Dummies','Local Community College','2021-06-01','2021-09-02','Come learn the 5 Stages of Retirement Everyone Will Go Through!',149,'When it comes to retirement, there is not anything more important than income, because without income, you do not have retirement.','Marcus Re','2022-02-27','','pending'),
+        ('4234','password','Sudhir Mishra','Security','Security Manager','Trainer Training For Trainers','Managing Services inc.','2022-02-22','2022-02-24','Effectiveness. Is the course effective in presenting information? Do the employees understand what was presented? What could be improved?',1325,'I completed 120 hours of trainer training!','Sudhir Mishra','2021-12-07','Lead Trainer Certification','pending'),
+        ('5234','password','Chris Waters','Events','Event coordinator','Translating 101','ABCalm','2022-01-01','2022-04-02','Advantages of being a translator are numerous, and it is a very exciting job to do but it needs strong interpersonal skills to navigate the difference between cultures.',395,'I can break down spoken word or translate documents to ensure that both parties understand each other in every format of communication.','Chris Waters','2021-12-23','ATA certification','pending'),
+        ('6234','password','Sora Lee','Security','Security guard lv.1','Fingerprint Training','SecureSteps','2022-03-01','2022-03-02','By law, thousands of professionals and volunteers are required to submit a Live Scan for a fingerprint-based criminal based background check, new laws are passed each year that create for greater demand for Live Scan services',199,'I mistakenly paid for fingerprinting training!','Sora Lee','2022-04-11','Fingerprint Rolling Certification','pending')
+        ; 
+
+
+
+
 
     TABLES--- just test tables
 
@@ -109,9 +170,32 @@ Postgres Stuff
 
         
 
+04/12
+
+STOPPING TO STUDY FOR QC 
+
+STILL NEED TO GET THE FORM TO THE FRONT END FOR THE INDIVIDUAL SUPERVISORS
+AND HAVE A WAY TO ADD YES TO A SUPEVISORS COLUMN IN ORDER FOR THEM TO SEE IT ON THEIR DASHBOARD
+ALSO A ALL FORMS SECTION ON ITS OWN PAGE.
+
+04/13
+
+supervisor -> can approve deny or pass it up to the manager for approval
+all pending requests will be in the supervisors inbox
+
+SELECT * FROM reimbursmentform WHERE status = 'pending' ORDER BY id asc
+'UPDATE reimbursmentform SET status= $2, supermessage=$3, depthead=$4 WHERE id=$1'
+
+
+manager -> can approve deny or pass it up to the benefits coordinator for approval
+if supervisor passes it up it appears in managers inbox
+
+SELECT * FROM reimbursmentform WHERE status = 'pending' AND depthead = yes ORDER BY id asc
 
 
 
+benefits coordinator-> can approve or deny 
+if manager passes it up it appears in BCs inbox
 
 
 

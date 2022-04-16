@@ -132,4 +132,8 @@ return (
 
 }
 
+<<<<<<< HEAD
 export default Employee;
+=======
+export default Employee;
+>>>>>>> main
