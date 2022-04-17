@@ -12,7 +12,17 @@
   /* 2 */
 }
 
+#money{
+  width:70px;
+ 
+}
 
+#font{
+  font-size:40px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  text-shadow:4px 4px #666666;
+  text-align: center;
+}
 
 .main-footer {
   color: white;
@@ -22,6 +32,8 @@
   bottom: 0;
   width: 100%;
 }
+
+
 
 /* Sections
    ========================================================================== */
