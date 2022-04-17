@@ -1,7 +1,8 @@
 // import "./App.css";
-import { Link,Outlet } from "react-router-dom";
+import { Link} from "react-router-dom";
 import { useState } from "react";
 import Axios from "axios";
+import { useNavigate } from "react-router";
 
 
 
@@ -26,6 +27,9 @@ function ReimbursmentForm() {
 
 
 
+// HOW TO NAVIGATE ON CLICK
+  const navigate = useNavigate();
+
 
 
   const addForm = (event) => {
@@ -49,11 +53,13 @@ function ReimbursmentForm() {
           empsignature: empsignature,
           todaysdate: todaysdate,
         
-        })
+        }).then((res) => {
+          console.log(res);
+          navigate("/Employee");
+        });
       };
     
-
-
+// ADD THE CONST TO THE ADD FORM FUNCTION
 
 
 
@@ -67,22 +73,27 @@ function ReimbursmentForm() {
   return (
 
 <>
+
 <div className="title">Dashboard </div>
 
      
 <nav className="navigate">  
-     <Link to="/"> Home</Link> 
+     <Link to="/Employee"> Back to Dashboard</Link> 
+
+
  </nav>
 
     <div className="container" id="container1">
 
-    
+    {/* THEN I PUT THE FUNCTION IN THE FORM INSTEAD OF THE BUTTON BUT IT STILL WORKED IN THE BUTTON
+    ALSO THE REQUIED ONLY WORKS WHEN THE SUBMIT IS INPUT NOT BUTTON */}
       <div className="information">
+      <form onSubmit={addForm}>
 
         <div>
         <label>Employee Id: </label>
         <input
-          type="text" 
+          type="text" name="pass" required
           onChange={(event) => {
             setEmpid(event.target.value);
           }}
@@ -90,7 +101,7 @@ function ReimbursmentForm() {
 
         <label> Password: </label>
         <input
-          type="text" 
+          type="text" name="pass" required 
           onChange={(event) => {
             setPassword(event.target.value);
           }}
@@ -101,7 +112,7 @@ function ReimbursmentForm() {
         <div>
         <label>Employee Name: </label>
         <input
-          type="text"
+          type="text" name="pass" required
           onChange={(event) => {
             setFullname(event.target.value);
           }}
@@ -111,7 +122,7 @@ function ReimbursmentForm() {
         <div>
         <label>Department:  </label>
         <input
-          type="text"
+          type="text" name="pass" required
           onChange={(event) => {
             setDept(event.target.value);
           }}
@@ -121,7 +132,7 @@ function ReimbursmentForm() {
         <div>
         <label>Title: </label>
         <input
-          type="text"
+          type="text" name="pass" required
           onChange={(event) => {
             setTitle(event.target.value);
           }}
@@ -132,7 +143,7 @@ function ReimbursmentForm() {
         <div>
         <label>Course/Event Name: </label>
         <input
-          type="text"
+          type="text" name="pass"required
           onChange={(event) => {
             setEventname(event.target.value);
           }}
@@ -142,7 +153,7 @@ function ReimbursmentForm() {
         <div>
         <label>Instructor/Facilitator:  </label>
         <input
-          type="text"
+          type="text" name="pass" required
           onChange={(event) => {
             setFacilitator(event.target.value);
           }}
@@ -153,7 +164,7 @@ function ReimbursmentForm() {
         <div>
         <label>Start Date:  </label>
         <input
-          type="date"
+          type="date" name="pass" required
           onChange={(event) => {
             setStartdate(event.target.value);
           }}
@@ -163,7 +174,7 @@ function ReimbursmentForm() {
         <div>
         <label>End Date:  </label>
         <input
-          type="date"
+          type="date" name="pass" required
           onChange={(event) => {
             setEnddate(event.target.value);
           }}
@@ -178,7 +189,7 @@ function ReimbursmentForm() {
         />
         <label> Course/Event Description: </label>
         <input
-          type="text"
+          type="text" name="pass" required
           onChange={(event) => {
             setDescription(event.target.value);
           }}
@@ -194,7 +205,7 @@ function ReimbursmentForm() {
         <div>
         <label> Total: </label>
         <input
-          type="number"
+          type="number" name="pass" required
           onChange={(event) => {
             setTotal(event.target.value);
           }}
@@ -204,7 +215,7 @@ function ReimbursmentForm() {
         <div>
         <label>Certification Name: </label>
         <input
-          type="text"
+          type="text" name="pass" required
           onChange={(event) => {
             setCertificationname(event.target.value);
           }}
@@ -214,7 +225,7 @@ function ReimbursmentForm() {
         <div>
         <label>Comments:  </label>
         <input
-          type="text"
+          type="text" name="pass" required
           onChange={(event) => {
             setEmpmessage(event.target.value);
           }}
@@ -226,7 +237,7 @@ function ReimbursmentForm() {
         <div>
         <label>Enter full name to sign: </label>
         <input
-          type="text"
+          type="text" name="pass" required
           onChange={(event) => {
             setEmpsignature(event.target.value);
           }}
@@ -234,7 +245,7 @@ function ReimbursmentForm() {
       
         <label> Today's Date:  </label>
         <input
-          type="date"
+          type="date" name="pass"required
           onChange={(event) => {
             setTodaysdate(event.target.value);
           }}
@@ -243,9 +254,9 @@ function ReimbursmentForm() {
 
 
 
-        <button onClick={addForm}>Submit</button>
+        <button type="submit"> Submit </button>
+        </form>
       </div>
-
 
 
 
