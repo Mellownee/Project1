@@ -49,6 +49,20 @@ function Employee(){
     });
   };
 
+    //THE DELETE SECTION IS ATTACHED TO A BUTTON. I THINK THE .FILTER RELOADS THE PAGE SO THAT THE DELETE IS SHOWN
+  //THE DELETE QUERY IS 'DELETE FROM formdetails WHERE id=$1'
+
+  const deleteForm = (id) => {
+    Axios.delete(`http://localhost:3001/delete/${id}`).then((response) => {
+      setReimbursementForm(
+        reimbursementForm.filter((val) => {
+          return val.id !== id;
+        })
+      );
+    });
+  };
+
+
   const renderErrorMessage = (name) =>
   name === errorMessages.name && (
     <div className="error">{errorMessages.message}</div>
@@ -57,16 +71,42 @@ function Employee(){
 
 return (
     <div className="App">
+          <div>
+            <nav>
+           
+                    <Link to="/"> Home</Link>
+           
+            </nav>
+            <Outlet />
+        </div>
+        <div className= "container" id="container1">
+          <h3> Hello and Welcome To Your Employee Dashboard </h3>
+          <h5><Link to="/ReimbursmentForm"> Click To Fill Out A Reimbursment Request</Link></h5>
+          <p>Reasons why your request may be in pending status...
+            
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate 
+            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+            sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
 
+
+
+
+
+    <div className= "container" id="container1">
     <div className="form">
+    <h5>Enter your employee ID and password to see your reimbursment history. </h5>
+
     <form onSubmit={getForm}>
       <div className="input-container">
-        <label>EmployeeId </label>
+        <label>Employee Id:   </label>
         <input type="text" name="employid" required />
         {renderErrorMessage("uname")}
       </div>
       <div className="input-container">
-        <label>Password </label>
+        <label>Password: </label>
         <input type="password" name="pass" required />
         {renderErrorMessage("pass")}
       </div>
@@ -76,40 +116,36 @@ return (
      
     </form>
   </div>
-    <div>
-            <nav>
-           
-                    <Link to="/"> Home</Link>
-           
-            </nav>
-            <Outlet />
-        </div>
+  </div>
 
   {reimbursementForm.map((val, key) => {
           return (
 
-            
+            <div className= "container" id="container1">
             <div className="form">
               <div>
-              <h3>Full Name: {val.fullname}</h3>
-                <h3>dept: {val.dept}</h3>
-                <h3>title: {val.title}</h3>
-                <h3>eventname: {val.eventname}</h3>
-                <h3>facilitator: {val.facilitator}</h3>
-                <h3>startdate: {val.startdate}</h3>
-                <h3>enddate: {val.enddate}</h3>
-                <h3>eventname: {val.eventname}</h3>
-                <h3>description: {val.description}</h3>
-                <h3>total: {val.total}</h3>
-                <h3>certificationname: {val.certificationname}</h3>
-                <h3>empmessage: {val.empmessage}</h3>
-                <h3>empsignature: {val.empsignature}</h3>
-                <h3>todaysdate: {val.todaysdate}</h3>
-                <h3>status: {val.status}</h3>
-                <p>---------------------------------</p>
+                <h5>Date Submitted: {val.todaysdate}</h5>
+                <p><b>{val.fullname}: </b>{val.dept}, {val.title} <br></br>
+                <b>Details of course/event:</b> <br></br>
+                {val.startdate}-{val.enddate} <br></br>
+                <b>{val.eventname}</b> by. <b>{val.facilitator}</b>: <br></br>
+                "{val.description}"<br></br>
+                {val.certificationname} <b>Total: ${val.total}</b><br></br>
+                Comments: {val.empmessage} <br></br>
+                <b>Status: {val.status}</b>
+                
+                </p>
+                <p>-------------------------------------------------------------------------------------------------</p>
+                <button
+                  onClick={() => {
+                    deleteForm(val.id);
+                  }}
+                >
+                  Delete
+                </button>
+                <p>-------------------------------------------------------------------------------------------------</p>
 
-
-
+              </div>
               </div>
               </div>
               

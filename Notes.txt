@@ -74,6 +74,19 @@ Postgres Stuff
         ; 
 
 
+        CREATE TABLE public.roleid
+        (
+            roleid bigint NOT NULL,
+            role character varying,
+            PRIMARY KEY (roleid)
+        );
+
+    insert these values then make a some ppl in the user table have these roleid #s to test.
+    
+    1 employee
+    2 supervisor
+    3 manager
+    4 benefitscoor
 
 
 
