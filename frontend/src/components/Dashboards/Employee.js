@@ -70,15 +70,12 @@ function Employee(){
 
 
 return (
-    <div className="App">
-          <div>
-            <nav>
-           
-                    <Link to="/"> Home</Link>
-           
-            </nav>
-            <Outlet />
-        </div>
+  <>
+  <div className="title"> Employee Dashboard</div>
+     
+     <nav className="navigate">  
+          <Link to="/"> Home</Link>
+      </nav>
         <div className= "container" id="container1">
           <h3> Hello and Welcome To Your Employee Dashboard </h3>
           <h5><Link to="/ReimbursmentForm"> Click To Fill Out A Reimbursment Request</Link></h5>
@@ -155,9 +152,9 @@ return (
 
 
 
-  </div>
+  
 
-
+</>
 
 
 

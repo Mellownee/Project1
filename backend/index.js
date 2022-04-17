@@ -6,7 +6,7 @@ const app = express();
 //processes data sent through an HTTP request body
 const bodyParser = require('body-parser');
 //port #
-const port = 3002;
+const port = 3001;
 //connects to dbconnections
 const poolconn = require('./dbconnections');
 //Cross-Origin Resource Sharing . It allows us to relax the security applied to an API

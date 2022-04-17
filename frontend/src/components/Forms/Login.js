@@ -101,7 +101,15 @@ function Login() {
   // input type=”submit” to allow users to submit the form.
   // Additionally, we will also add error messages below every form input element.
   const renderForm = (
-    <div className="form">
+   <>
+
+<nav className="navigate">  
+          <Link to="/"> Home</Link> 
+      </nav>
+            <Outlet />
+
+    <div className="container" id="container1">
+    
       <form onSubmit={handleSubmit}>
         <div className="input-container">
           <label>Username </label>
@@ -118,15 +126,12 @@ function Login() {
         </div>
         {/* Remove home change to registration page? */}
         <div>
-            <nav>
-           
-                    <Link to="/"> Home</Link>
-           
-            </nav>
-            <Outlet />
+       
+     
         </div>
       </form>
     </div>
+    </>
   );
 
   return (
@@ -136,6 +141,7 @@ function Login() {
         {renderForm}
       </div>
     </div>
+
   );
 }
 
