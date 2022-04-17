@@ -1,6 +1,6 @@
 import React, { useState} from "react";
-import { Link,Outlet,NavigateProps,useLocation, Naviga, HistoryRouterProps } from "react-router-dom";
-import "../styles.css";
+import { Link,Outlet,useNavigate} from "react-router-dom";
+// import "../styles.css";
 import axios from 'axios';
 
 function Login() {
@@ -13,12 +13,8 @@ function Login() {
      */
   // React States
   const [errorMessages, setErrorMessages] = useState({});
-  const [isSubmitted, setIsSubmitted] = useState();
-  const [isSupervisorUser,setIsSupervisorUser] = useState();
-  const [isManagerUser,setIsManagerUser] = useState();
-  const [isBenefitcoorUser,setIsBenefitcoorUser] = useState();
 
-  const location = useLocation();
+  const navigate = useNavigate();
 
 // function BenefitsCoor() {
 // this.props.location('/BenefitsCoor')
@@ -63,20 +59,22 @@ function Login() {
                 roleData= res.data[0];
                 if(roleData){
                     if(roleData.role === 'supervisor'){
-                        setIsSupervisorUser(true);
+                      navigate("/Supervisor");
                     }
                     if (roleData.role === 'manager'){
-                      setIsManagerUser(true);
+                      navigate("/Manager");
                     }
                     if (roleData.role === 'benefitscoor'){
-                    setIsBenefitcoorUser(true);
+                     navigate("/BenefitsCoor");
                     
+                    }
+                    if (roleData.role === 'employee'){
+                      navigate("/Employee");
                     }
                 }
                 
           })
          
-          setIsSubmitted(true);
       }
     } else {
       // Username not found
@@ -115,6 +113,7 @@ function Login() {
         <div className="button-container">
           <input type="submit" />
         </div>
+        {/* Remove home change to registration page? */}
         <div>
             <nav>
            
@@ -131,20 +130,10 @@ function Login() {
     <div className="app">
       <div className="login-form">
         <div className="title">Sign In</div>
-        {isSubmitted ? 
-                      isSupervisorUser ? <div>Supervisor user is successfully logged in </div> :
-
-                      isManagerUser ? <div>Manager is successfully logged in</div> :
-
-                      isBenefitcoorUser ? <div> BC is successfully logged in</div>: 
-
-
-                      <div> user is successfully logged in</div>
-        : renderForm}
+        {renderForm}
       </div>
     </div>
   );
 }
-{/* <Navigate to="/Employee" state={{from: location}} replace /> */}
 
 export default Login;
