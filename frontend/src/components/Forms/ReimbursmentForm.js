@@ -101,7 +101,7 @@ function ReimbursmentForm() {
 
         <label> Password: </label>
         <input
-          type="text" name="pass" required 
+          type="password" name="pass" required 
           onChange={(event) => {
             setPassword(event.target.value);
           }}
