@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import { useState } from "react";
 import Axios from "axios";
 import ManagerHeader from "./Headers/ManagerHeader"
+import moment from "moment";
 
 const Manager = () => {
 
@@ -106,28 +107,28 @@ const Manager = () => {
 
                 <br></br>
                 
-              <div>
-              <h3>Full Name: {val.fullname}</h3>
-                <h3>dept: {val.dept}</h3>
-                <h3>title: {val.title}</h3>
-                <h3>eventname: {val.eventname}</h3>
-                <h3>facilitator: {val.facilitator}</h3>
-                <h3>startdate: {val.startdate}</h3>
-                <h3>enddate: {val.enddate}</h3>
-                <h3>eventname: {val.eventname}</h3>
-                <h3>description: {val.description}</h3>
-                <h3>total: {val.total}</h3>
-                <h3>certificationname: {val.certificationname}</h3>
-                <h3>empmessage: {val.empmessage}</h3>
-                <h3>empsignature: {val.empsignature}</h3>
-                <h3>todaysdate: {val.todaysdate}</h3>
-                <h3>status: {val.status}</h3>
-                <h3>supermessage: {val.supermessage}</h3>
-                <h3>depthead: {val.depthead}</h3>
-                <h3>benefitscoor: {val.benifitscoor}</h3>
-
-                <p>---------------------------------</p>
-              </div>
+                <blockquote
+                className="p-4"
+                style={{
+                  fontSize: '1.0rem',
+                  fontStyle: 'italic',
+                  border: '2px dotted #1a1a1a',
+                  lineHeight: '1.5',
+                }}
+              >
+                <h5>Date Submitted: {moment(val.todaysdate).format("MM/DD/YYYY")}</h5>
+                <p><b>{val.fullname}: </b>{val.dept}, {val.title} <br></br>
+                <b>Details of course/event:</b> <br></br>
+                Dates Attended: {moment(val.startdate).format("MM/DD/YYYY")}-{moment(val.enddate).format("MM/DD/YYYY")} <br></br>
+                <b>{val.eventname}</b> by. <b>{val.facilitator}</b>: <br></br>
+                "{val.description}"<br></br>
+                {val.certificationname} <b>Total: ${val.total}</b><br></br>
+                Employee Comments: {val.empmessage} <br></br>
+                <b>Status: {val.status}</b>
+                {val.supermessage}
+                </p>
+                <p>-------------------------------------------------------------------------------------------------</p>
+              </blockquote>
               <div>
 
             <input

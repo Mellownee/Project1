@@ -1,6 +1,7 @@
 import { Link,Outlet } from "react-router-dom";
 import { useState } from "react";
 import Axios from "axios";
+import moment from "moment";
 
 
 function Archive(){
@@ -50,38 +51,32 @@ const getForm = () => {
                     <div>
                
                     <div className="bg-light py-4">
-              <blockquote
+                    <div className="form">
+            <blockquote
                 className="p-4"
                 style={{
-                  fontSize: '1.5rem',
+                  fontSize: '1.0rem',
                   fontStyle: 'italic',
                   border: '2px dotted #1a1a1a',
                   lineHeight: '1.5',
                 }}
               >
-               Full Name: {val.fullname}<br/>
-               dept: {val.dept}<br/>
-               
-               title: {val.title}<br/>
-              eventname: {val.eventname}<br/>
-              facilitator: {val.facilitator}<br/>
-              startdate: {val.startdate}<br/>
-              enddate: {val.enddate}<br/>
-              eventname: {val.eventname}<br/>
-              description: {val.description}<br/>
-                      total: {val.total}<br/>
-                      certificationname: {val.certificationname}<br/>
-                      empmessage: {val.empmessage}<br/>
-                      empsignature: {val.empsignature}<br/>
-                      todaysdate: {val.todaysdate}<br/>
-                      status: {val.status}<br/>
-                      supermessage: {val.supermessage}<br/>
-                      depthead: {val.depthead}<br/>
-                      benefitscoor: {val.benifitscoor}<br/>
-                   
+                <h5>Date Submitted: {moment(val.todaysdate).format("MM/DD/YYYY")}</h5>
+                <p><b>{val.fullname}: </b>{val.dept}, {val.title} <br></br>
+                <b>Details of course/event:</b> <br></br>
+                Dates Attended: {moment(val.startdate).format("MM/DD/YYYY")}-{moment(val.enddate).format("MM/DD/YYYY")} <br></br>
+                <b>{val.eventname}</b> by. <b>{val.facilitator}</b>: <br></br>
+                "{val.description}"<br></br>
+                {val.certificationname} <b>Total: ${val.total}</b><br></br>
+                Employee Comments: {val.empmessage} <br></br>
+                <b>Status: {val.status}</b>
+                {val.supermessage}
+                </p>
+                <p>-------------------------------------------------------------------------------------------------</p>
               </blockquote>
            
               </div>
+                  </div>
                   </div>
                   </div>
 
@@ -91,13 +86,7 @@ const getForm = () => {
       
         })}
       </div>
-              {/* just a link to not get stuck at the bottom in case theres a long list*/}
 
-      <div>
-
-          
-          
-        </div>
 
     </>
     
