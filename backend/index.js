@@ -43,6 +43,21 @@ app.get('/login/:Uname',(req,res)=> {
     })
 }); 
 
+//http://localhost:3001/roleById/1
+app.get('/roleById/:roleid',(req,res)=>{
+    const role_id = req.params.roleid;
+    poolconn.query('SELECT * FROM roleid WHERE roleid=$1',[role_id],(error,results)=>{
+        if(error){
+            throw error;
+        }
+        res.status(200).json(results.rows);
+    })
+});
+
+
+
+
+
 //checks to make sure the same employee id doesnt register again.
 //http://localhost:3001/userByName/user1
 app.get('/userByEmpId/:empId',(req,res)=>{

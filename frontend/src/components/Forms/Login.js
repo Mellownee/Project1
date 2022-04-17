@@ -1,6 +1,6 @@
 import React, { useState} from "react";
-import { Link,Outlet } from "react-router-dom";
-
+import { Link,Outlet,NavigateProps,useLocation, Naviga, HistoryRouterProps } from "react-router-dom";
+import "../styles.css";
 import axios from 'axios';
 
 function Login() {
@@ -14,7 +14,15 @@ function Login() {
   // React States
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState();
-  const [isAdminUser,setIsAdminUser] = useState();
+  const [isSupervisorUser,setIsSupervisorUser] = useState();
+  const [isManagerUser,setIsManagerUser] = useState();
+  const [isBenefitcoorUser,setIsBenefitcoorUser] = useState();
+
+  const location = useLocation();
+
+// function BenefitsCoor() {
+// this.props.location('/BenefitsCoor')
+// }
 
   const errors = {
     uname: "invalid username",
@@ -54,8 +62,15 @@ function Login() {
           axios.get(`http://localhost:3001/roleById/${userData.roleid}`).then((res)=>{
                 roleData= res.data[0];
                 if(roleData){
-                    if(roleData.roletype === 'admin'){
-                        setIsAdminUser(true);
+                    if(roleData.role === 'supervisor'){
+                        setIsSupervisorUser(true);
+                    }
+                    if (roleData.role === 'manager'){
+                      setIsManagerUser(true);
+                    }
+                    if (roleData.role === 'benefitscoor'){
+                    setIsBenefitcoorUser(true);
+                    
                     }
                 }
                 
@@ -70,7 +85,7 @@ function Login() {
     });
   };
 
-  
+
   
 
   // Generate JSX code for error message
@@ -85,63 +100,51 @@ function Login() {
   // input type=”submit” to allow users to submit the form.
   // Additionally, we will also add error messages below every form input element.
   const renderForm = (
-   
-
-    <div className= "container" id="container1">
-      <form class="form-control" id="floatingInput" placeholder="Username" onSubmit={handleSubmit}>
+    <div className="form">
+      <form onSubmit={handleSubmit}>
         <div className="input-container">
-          <label for ="floatingInput">Username </label>
+          <label>Username </label>
           <input type="text" name="uname" required />
           {renderErrorMessage("uname")}
         </div>
-
-        <div className="input-container" id="floatingInput" placeholder="Password">
-          <label for="floatingInput">Password </label>
+        <div className="input-container">
+          <label>Password </label>
           <input type="password" name="pass" required />
           {renderErrorMessage("pass")}
         </div>
-        <div class="col-12">
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </div>
-
-      
-     
+        <div className="button-container">
+          <input type="submit" />
+        </div>
         <div>
-
-     
-      
-
-
-
-
-          
+            <nav>
+           
+                    <Link to="/"> Home</Link>
+           
+            </nav>
             <Outlet />
         </div>
       </form>
     </div>
-   
   );
 
   return (
     <div className="app">
       <div className="login-form">
-        <div className="title">Sign in</div>
-        <nav className="navigate">  
-           <Link to="/"> Home</Link>
-       </nav>
+        <div className="title">Sign In</div>
         {isSubmitted ? 
-                      (isAdminUser ? <div>Admin user is successfully logged in </div> : <div> 
-                        <>
-                      <nav className="navigate">  
-                      <Link to="/Asmin">Admin</Link> 
-                  </nav>
-                  </>
-                  </div>)  
+                      isSupervisorUser ? <div>Supervisor user is successfully logged in </div> :
+
+                      isManagerUser ? <div>Manager is successfully logged in</div> :
+
+                      isBenefitcoorUser ? <div> BC is successfully logged in</div>: 
+
+
+                      <div> user is successfully logged in</div>
         : renderForm}
       </div>
     </div>
   );
 }
-
+{/* <Navigate to="/Employee" state={{from: location}} replace /> */}
 
 export default Login;
