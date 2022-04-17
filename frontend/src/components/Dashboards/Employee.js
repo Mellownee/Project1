@@ -1,6 +1,7 @@
 import { Link,Outlet } from "react-router-dom";
 import { useState } from "react";
 import Axios from "axios";
+import moment from "moment";
 
 
 
@@ -67,8 +68,6 @@ function Employee(){
   name === errorMessages.name && (
     <div className="error">{errorMessages.message}</div>
   );
-
-
 return (
   <>
   <div className="title"> Employee Dashboard</div>
@@ -120,17 +119,25 @@ return (
 
             <div className= "container" id="container1">
             <div className="form">
-              <div>
-                <h5>Date Submitted: {val.todaysdate}</h5>
+            <blockquote
+                className="p-4"
+                style={{
+                  fontSize: '1.0rem',
+                  fontStyle: 'italic',
+                  border: '2px dotted #1a1a1a',
+                  lineHeight: '1.5',
+                }}
+              >
+                <h5>Date Submitted: {moment(val.todaysdate).format("MM/DD/YYYY")}</h5>
                 <p><b>{val.fullname}: </b>{val.dept}, {val.title} <br></br>
                 <b>Details of course/event:</b> <br></br>
-                {val.startdate}-{val.enddate} <br></br>
+                Dates Attended: {moment(val.startdate).format("MM/DD/YYYY")}-{moment(val.enddate).format("MM/DD/YYYY")} <br></br>
                 <b>{val.eventname}</b> by. <b>{val.facilitator}</b>: <br></br>
                 "{val.description}"<br></br>
                 {val.certificationname} <b>Total: ${val.total}</b><br></br>
                 Comments: {val.empmessage} <br></br>
                 <b>Status: {val.status}</b>
-                
+                {val.supermessage}
                 </p>
                 <p>-------------------------------------------------------------------------------------------------</p>
                 <button
@@ -140,9 +147,8 @@ return (
                 >
                   Delete
                 </button>
-                <p>-------------------------------------------------------------------------------------------------</p>
 
-              </div>
+              </blockquote>
               </div>
               </div>
               
