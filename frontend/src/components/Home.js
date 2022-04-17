@@ -2,7 +2,8 @@
 import { Link,Outlet } from "react-router-dom";
 import images from "../assets/images/traveling.jpg"
 import expenses from "../assets/images/expenses.jpg";
-import education from "../assets/images/education.jpg"
+import education from "../assets/images/education.jpg";
+import money from "../assets/images/money.jpg"
 
 import Footer from "./Footer";
 
@@ -14,7 +15,12 @@ function Home(){
     return (
         <>
 
-<div className="title" id="font">Welcome To Audacity Reimbursment Program</div>
+<div className="title" id="font">
+    Welcome To Audacity Reimbursment Program  <img id="money"className="mb-5"  src={money} /> 
+   
+  
+  </div>
+
 < nav  className="bg-primary1 text-light mb-4 py-3 flex-row align-center">
       <div className="container flex-row justify-space-between-lg justify-center align-center">
         
