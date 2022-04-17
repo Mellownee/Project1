@@ -81,12 +81,21 @@ Postgres Stuff
             PRIMARY KEY (roleid)
         );
 
-    insert these values then make a some ppl in the user table have these roleid #s to test.
-    
-    1 employee
-    2 supervisor
-    3 manager
-    4 benefitscoor
+ADD ROLES TO ROLEID
+
+        INSERT INTO roleid (roleid, role)
+        VALUES ('1', 'employee'),('2', 'supervisor'),('3', 'manager'),('4', 'benefitscoor');
+
+
+TEST USERS WITH ROLES
+
+        INSERT INTO  users (empid, username, password, roleid)
+        VALUES ('1234', 'employee1', 'password', '1'),
+        ('2234', 'super1', 'password', '2'),
+        ('3234', 'manag1', 'password', '3'),
+        ('4234', 'benifitcoor1', 'password', '4');
+
+
 
 
 
