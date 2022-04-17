@@ -1,6 +1,6 @@
 import React, { useState} from "react";
 import { Link,Outlet,NavigateProps,useLocation, Naviga, HistoryRouterProps } from "react-router-dom";
-import "../styles.css";
+
 import axios from 'axios';
 
 function Login() {
