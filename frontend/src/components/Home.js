@@ -14,7 +14,7 @@ function Home(){
     return (
         <>
 
-<div className="title">Welcome To Audacity Reimbursment Program</div>
+<div className="title" id="font">Welcome To Audacity Reimbursment Program</div>
 < nav  className="bg-primary1 text-light mb-4 py-3 flex-row align-center">
       <div className="container flex-row justify-space-between-lg justify-center align-center">
         

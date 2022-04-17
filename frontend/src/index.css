@@ -12,7 +12,11 @@
   /* 2 */
 }
 
-
+#font{
+  font-size:xx-large;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  text-shadow:4px 4px #666666;
+}
 
 .main-footer {
   color: white;
