@@ -73,7 +73,10 @@ const Supervisor = () => {
         <Header />
 
         <SupervisorHeader/>
+<<<<<<< HEAD
        
+=======
+>>>>>>> 6f4f32015d5ca81db64fa9e2ec725d9e1576c912
      
      <div className= "container" id="container1">
        <h3> Hello and Welcome To Your Supervisor Dashboard </h3>
