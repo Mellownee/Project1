@@ -1,8 +1,9 @@
 import { Link,Outlet } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Axios from "axios";
 import moment from "moment";
-
+import Footer from "../Footer";
+import Header from "../Header";
 
 
 
@@ -12,7 +13,8 @@ import moment from "moment";
 function Employee(){
 
     const [reimbursementForm, setReimbursementForm] = useState([]);
-
+    const [employid, setEmployid] = useState("");
+    const [password, setPassword] = useState("");
 
     const [errorMessages, setErrorMessages] = useState({});
     const errors = {
@@ -34,21 +36,23 @@ function Employee(){
 
     Axios.get(`http://localhost:3001/reimbursmentform/${employid.value}`).then((response) => {
     employData=response.data[0];
-      console.log(employData);
-      
+      console.log(employData);     
       if (employData) {
         if (employData.password !== pass.value) {
           // Invalid password
           setErrorMessages({ name: "pass", message: errors.pass });
-        } 
-  
-        setReimbursementForm(response.data);
-
-    
-        };
+        }  
+    }; setReimbursementForm(response.data);
+        }).then((res) => {
+          setEmployid("");
+          setPassword("");
 
     });
+
+    
   };
+
+
 
     //THE DELETE SECTION IS ATTACHED TO A BUTTON. I THINK THE .FILTER RELOADS THE PAGE SO THAT THE DELETE IS SHOWN
   //THE DELETE QUERY IS 'DELETE FROM formdetails WHERE id=$1'
@@ -68,13 +72,27 @@ function Employee(){
   name === errorMessages.name && (
     <div className="error">{errorMessages.message}</div>
   );
+
+  
+//   getBackgroundColor(val.status) {
+//     if (val.status === 'approved') {
+//         return 'blue';
+//     }
+//     if (val.status === 'pending') {
+//         return 'red';
+//     }
+//     return 'black';
+// };
+
+
+
+
+
 return (
   <>
+  <Header /> 
   <div className="title"> Employee Dashboard</div>
      
-     <nav className="navigate">  
-          <Link to="/"> Home</Link>
-      </nav>
         <div className= "container" id="container1">
           <h3> Hello and Welcome To Your Employee Dashboard </h3>
           <h5><Link to="/ReimbursmentForm"> Click To Fill Out A Reimbursment Request</Link></h5>
@@ -98,13 +116,19 @@ return (
     <form onSubmit={getForm}>
       <div className="input-container">
         <label>Employee Id:   </label>
-        <input type="text" name="employid" required />
+        <input type="text" name="employid" required 
+        value={employid}
+        onChange={(e) => setEmployid(e.target.value)}/>
+        
         {renderErrorMessage("uname")}
       </div>
       <div className="input-container">
         <label>Password: </label>
-        <input type="password" name="pass" required />
+        <input type="password" name="pass" required 
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}/>
         {renderErrorMessage("pass")}
+        
       </div>
       <div className="button-container"> 
         <input type="submit" />
@@ -112,12 +136,21 @@ return (
      
     </form>
   </div>
+
   </div>
 
   {reimbursementForm.map((val, key) => {
+    
+
+
+
+
           return (
+            
+
 
             <div className= "container" id="container1">
+
             <div className="form">
             <blockquote
                 className="p-4"
@@ -128,6 +161,7 @@ return (
                   lineHeight: '1.5',
                 }}
               >
+                <div key={val.id}>
                 <h5>Date Submitted: {moment(val.todaysdate).format("MM/DD/YYYY")}</h5>
                 <p><b>{val.fullname}: </b>{val.dept}, {val.title} <br></br>
                 <b>Details of course/event:</b> <br></br>
@@ -138,7 +172,8 @@ return (
                 Comments: {val.empmessage} <br></br>
                 <b>Status: {val.status}</b>
                 {val.supermessage}
-                </p>
+
+                 </p>
                 <p>-------------------------------------------------------------------------------------------------</p>
                 <button
                   onClick={() => {
@@ -147,7 +182,7 @@ return (
                 >
                   Delete
                 </button>
-
+                </div>
               </blockquote>
               </div>
               </div>
@@ -158,7 +193,8 @@ return (
 
 
 
-  
+<Footer />
+
 
 </>
 

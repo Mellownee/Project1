@@ -2,6 +2,9 @@ import { Link,Outlet } from "react-router-dom";
 import { useState } from "react";
 import Axios from "axios";
 import moment from "moment";
+import Header from "../Header";
+import Footer from "../Footer";
+
 
 
 function Archive(){
@@ -26,11 +29,17 @@ const getForm = () => {
   return (
 
     <>
-    <div className="title">Dashboard </div>
+            <Header />
+
+    
   
     <nav className="navigate">  
          <Link to="/"> Home</Link> 
      </nav>
+     <div className= "container" id="container1">
+       <h3> Hello and Welcome To The Archive </h3>
+     </div>
+
 
      <div className="container" id="container1">
         <button onClick={getForm}>Show Requests</button>
@@ -87,6 +96,7 @@ const getForm = () => {
         })}
       </div>
 
+      <Footer />
 
     </>
     

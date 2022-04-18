@@ -9,6 +9,7 @@ import Employee from './Dashboards/Employee';
 import Manager from './Dashboards/Manager';
 import Supervisor from './Dashboards/Supervisor';
 import Archive from './Dashboards/Archive';
+import Test from './Dashboards/testing';
 
 
 
@@ -52,6 +53,7 @@ function App(){
 
             {/* <Route path="/form" element={<Form />} /> */}
 
+            <Route path="/Test" element={<Test />} />
 
                 
 
