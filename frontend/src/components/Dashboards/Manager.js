@@ -89,13 +89,14 @@ useEffect(() =>{
         <ManagerHeader/>     
      <div className= "container" id="container1">
        <h3> Hello and Welcome To Your Manager Dashboard </h3>
-       <p>GUIDELINES FOR RESPONDING TO REIMBURSMENT REQUESTS
+       <p>GUIDELINES FOR RESPONDING TO REIMBURSMENT REQUESTS</p>
          
-         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-         labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-         nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate 
-         velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-         sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+       <p>Ensure that forms are field out entirely or push them back to the employee.
+           Reference the current contract for a thorough explanation of course/ job title 
+           authorization. If you have any questions or concerns please speak with your Department 
+           Trainer. All rejection require a comment explaining why. Feel free to contact HR via email prior to any
+            rejections to ensure the rejection is not erroneous.
+         </p>
      </div>        
         <div className="App">
         <div className="information">

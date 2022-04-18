@@ -1,11 +1,13 @@
 import { Link,Outlet } from "react-router-dom";
 import { useState, useEffect } from "react";
+// import { Link,Outlet } from "react-router-dom";
+import { useState } from "react";
 import Axios from "axios";
 import moment from "moment";
+import BenefitsCoorHeader from "./Headers/BenefitsCoorHeader";
 import Header from "../Header";
 import Footer from "../Footer";
 import Archive from "./Archive";
-import BenifitHeader from "./Headers/BenifitscoorHeader";
 
 
 
@@ -71,17 +73,16 @@ const BenefitsCoor= () => {
       return (
         <>
         <Header />
-        <BenifitHeader />
+        <BenefitsCoorHeader />
 
         <div className= "container" id="container1">
        <h3> Hello and Welcome To Your Benefits Coordinator Dashboard </h3>
-       <p>GUIDELINES FOR RESPONDING TO REIMBURSMENT REQUESTS
+       <p>GUIDELINES FOR RESPONDING TO REIMBURSMENT REQUESTS</p>
          
-         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-         labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-         nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate 
-         velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-         sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+       <p>Ensure that forms are field out entirely or push them back to the employee.
+           Reference the current contract for a thorough explanation of course/ job title 
+           authorization. Follow all guidelines as explained under the contract. 
+           Any rejection should include an explanation why.</p>
      </div>
 
         <div className="App">

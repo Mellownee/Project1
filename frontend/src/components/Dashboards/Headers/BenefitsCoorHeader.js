@@ -2,7 +2,7 @@ import React from 'react';
 
 
 
-const SupervisorHeader = () => {
+const BenefitsCoorHeader = () => {
   return (
     <header className="bg-primary text-light py-1 flex-row align-center ">
     <div className="container flex-row justify-space-between-lg justify-center align-center ">
@@ -11,7 +11,8 @@ const SupervisorHeader = () => {
               style={{
                 fontSize: '2.0rem',
                 fontStyle: 'italic',
-              }}>Supervisor Dashboard</h1>
+                
+              }}>Benefits Coordinator Dashboard</h1>
 
         <p className="m-0"></p>
       
@@ -22,4 +23,4 @@ const SupervisorHeader = () => {
   );
 };
 
-export default SupervisorHeader;
+export default BenefitsCoorHeader;

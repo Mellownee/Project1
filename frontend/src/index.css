@@ -30,7 +30,17 @@
   padding-top: 3em;
   position: static;
   bottom: 0;
-  width: 100%;
+  width: 100vw;
+}
+
+.main-footeralt {
+  color: white;
+  background-color: darkcyan;
+  padding-top: 3em;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+ 
 }
 
 .fa-facebook {
@@ -106,7 +116,8 @@ padding-left: 2rem;
  * Render the `main` element consistently in IE.
  */
 main {
-  display: block;
+  display: flex;
+  width: 100vw;
 }
 
 /**
@@ -130,6 +141,7 @@ h1 {
   color: #ffffff;
 }
 #container1{
+
   padding: 10px;
   margin-top: 40px;
  border:solid 3px;
@@ -614,23 +626,17 @@ a:hover {
   margin:auto;
 }
 .mb-books {
-  align-items:center;
-  float:right; 
+  float:inline-end; 
   display:block;
-  padding-top: 7rem;
-
-  max-width: 30%;
-  max-height: 30%;
-  margin:auto;
+  max-width: 50%;
+  max-height: 50%;
+  margin: auto;
 }
 
 
   .mb-plane {
-    align-items:center;
-    float:right; 
+    float:inline-end; 
     display:block;
-    padding-top: 5rem;
-  
     max-width: 30%;
     max-height: 30%;
     margin:auto;
@@ -638,10 +644,11 @@ a:hover {
   
 }
 .mb-expenses {
-  float:right; 
+  float:inline-end; 
   display:block;
-  max-width: 15%;
-  max-height: 15%;
+  max-width: 30%;
+  max-height: 30%;
+  margin: auto;
   
 }
 
@@ -1217,11 +1224,57 @@ a:hover {
   background-color: #31a9e1;
 }
 
+.card-container {
+  display: flex;
+  width: 100vw;
+}
+
 .card {
   border: 1px solid #1a1a1a;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
+  margin: 2rem;
   
+  /* margin-bottom: 2rem;
+  margin-top: 2rem; */
+}
+.card-title {
+  text-align: center;
+}
+
+@media (min-width: 681px) and (max-width: 1200px) {
+  .card-container {
+    display: grid;
+    justify-self: center;
+    width: fit-content;
+  }
+
+  .card {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-size: 3em;
+    
+    }
+    .mb-expenses, .mb-books, .mb-plane {
+      float: right; 
+      margin: 2rem;
+      align-items: center;
+    }
+
+    .card-title {
+      text-align: left;
+    }
+  
+}
+
+@media (min-width: 0px)and (max-width: 680px) {
+  .card-container {
+    display: grid;
+    grid-template-rows: 1fr max-content;
+  }
+  .mb-expenses, .mb-books, .mb-plane {
+    display: none; 
+    margin: 0 auto;
+    
+  }
 }
 
 .card .card-header {
@@ -1397,6 +1450,7 @@ label {
   cursor: auto;
   display: block;
   margin: auto;
+  margin-top: 1rem;
   width: 55%;
   padding: 12px;
   box-sizing: content-box;
