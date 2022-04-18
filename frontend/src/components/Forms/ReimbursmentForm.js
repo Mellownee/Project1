@@ -85,7 +85,10 @@ function ReimbursmentForm() {
           
           <p>Guidelines for filling out the form....
             
-            You are responsible for keeping track of the amounts previously approved. You </p>
+            You are responsible for keeping track of the amounts previously approved. 
+            Complete form entirely. For more information, see Education section of current contract,
+            contact your direct supervisor or contact the Benefits Coordination Team via email at benefits@audacity.com.
+            Please allow up to 72 hours for response from the Benefits Coordination Team. </p>
         </div>
         <h5 className="backlink"> <Link to="/Employee"> Back to Dashboard</Link> </h5>
 
@@ -270,7 +273,7 @@ function ReimbursmentForm() {
 
 
 
-        <button className="button" type="submit" class="btn btn-success"> Submit </button>
+        <button className="button" type="submit" class="button"> Submit </button>
         </form>
       </div>
 

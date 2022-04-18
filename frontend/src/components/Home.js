@@ -72,7 +72,7 @@ function Home(){
   <div class="card-body">
   <img className="mb-books"  src={education} />
 
-    <h5 class="card-title">Popular!!! </h5>
+    <h5 class="card-title"> Popular!!! </h5>
     <h6 class="card-subtitle mb-2 text-muted">Events &#38; Certifications</h6>
     <ul class="card-text">
       <li>EVENTS</li>

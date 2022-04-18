@@ -626,23 +626,17 @@ a:hover {
   margin:auto;
 }
 .mb-books {
-  align-items:center;
-  float:right; 
+  float:inline-end; 
   display:block;
-  padding-top: 7rem;
-
-  max-width: 30%;
-  max-height: 30%;
-  margin:auto;
+  max-width: 50%;
+  max-height: 50%;
+  margin: auto;
 }
 
 
   .mb-plane {
-    align-items:center;
-    float:right; 
+    float:inline-end; 
     display:block;
-    padding-top: 5rem;
-  
     max-width: 30%;
     max-height: 30%;
     margin:auto;
@@ -650,10 +644,11 @@ a:hover {
   
 }
 .mb-expenses {
-  float:right; 
+  float:inline-end; 
   display:block;
-  max-width: 15%;
-  max-height: 15%;
+  max-width: 30%;
+  max-height: 30%;
+  margin: auto;
   
 }
 
@@ -1231,7 +1226,7 @@ a:hover {
 
 .card-container {
   display: flex;
-  width: 80vw;
+  width: 100vw;
 }
 
 .card {
@@ -1240,6 +1235,9 @@ a:hover {
   
   /* margin-bottom: 2rem;
   margin-top: 2rem; */
+}
+.card-title {
+  text-align: center;
 }
 
 @media (min-width: 681px) and (max-width: 1200px) {
@@ -1256,8 +1254,13 @@ a:hover {
     
     }
     .mb-expenses, .mb-books, .mb-plane {
-      width: 55%;
-      height: 55%;
+      float: right; 
+      margin: 2rem;
+      align-items: center;
+    }
+
+    .card-title {
+      text-align: left;
     }
   
 }
@@ -1270,6 +1273,7 @@ a:hover {
   .mb-expenses, .mb-books, .mb-plane {
     display: none; 
     margin: 0 auto;
+    
   }
 }
 
@@ -1446,6 +1450,7 @@ label {
   cursor: auto;
   display: block;
   margin: auto;
+  margin-top: 1rem;
   width: 55%;
   padding: 12px;
   box-sizing: content-box;
