@@ -86,7 +86,7 @@ function UserRegistration() {
             </div>
             <div className="input-container">
               <label>Password </label>
-              <input type="pass" name="password" required />
+              <input type="password" name="password" required />
               {renderErrorMessage("pass")}
             </div>
             <div className="button-container">
