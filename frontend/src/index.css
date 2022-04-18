@@ -76,11 +76,11 @@ body {
   
 }
 .bg-primary1{
-  padding:100px;
   color:#cccccc;
   background-color: darkcyan;
   margin-top: 0px;
   margin-bottom: 0px;
+
 }
 
 .navigate{
@@ -91,8 +91,9 @@ body {
 }
 
 .card{
-  width: 50rem;
-  margin-left: 400px;
+  width: 70rem;
+margin: auto;
+padding-left: 2rem;
   
 }
 
@@ -123,7 +124,7 @@ h1 {
   background-color: darkcyan;
   font-family: 'Courier New', Courier, monospace;
   font-size: xx-large;
-  color: #cecece;
+  color: #ffffff;
 }
 #container1{
   margin-top: 40px;
@@ -468,31 +469,31 @@ h6 {
 }
 
 h1 {
-  font-size: 2.25rem;
+  font-size: 3.25rem;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
 h3 {
-  font-size: 1.75rem;
+  font-size: 2.75rem;
 }
 
 h4 {
-  font-size: 1.5rem;
+  font-size: 2.5rem;
 }
 
 h5 {
-  font-size: 1.25rem;
+  font-size: 2rem;
 }
 
 h6 {
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 p {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   margin: 0 0 1rem;
   line-height: 1.5;
 }
@@ -500,6 +501,7 @@ p {
 ul,
 ol,
 dl {
+  font-size: 1.2rem;
   margin-top: 0;
   margin-bottom: 1rem;
 }
@@ -602,8 +604,45 @@ a:hover {
 }
 
 .mb-5 {
-  margin-bottom: 1.625rem !important;
+  align-items:center;
+  float:right; 
+  display:block;
+  max-width: 30%;
+  max-height: 30%;
+  margin:auto;
 }
+.mb-books {
+  align-items:center;
+  float:right; 
+  display:block;
+  padding-top: 7rem;
+
+  max-width: 30%;
+  max-height: 30%;
+  margin:auto;
+}
+
+
+  .mb-plane {
+    align-items:center;
+    float:right; 
+    display:block;
+    padding-top: 5rem;
+  
+    max-width: 30%;
+    max-height: 30%;
+    margin:auto;
+  
+  
+}
+.mb-expenses {
+  float:right; 
+  display:block;
+  max-width: 15%;
+  max-height: 15%;
+  
+}
+
 
 .mb-auto {
   margin-bottom: auto !important;
@@ -1178,7 +1217,9 @@ a:hover {
 
 .card {
   border: 1px solid #1a1a1a;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  
 }
 
 .card .card-header {
@@ -1188,7 +1229,7 @@ a:hover {
 }
 
 .card .card-body {
-  padding: 0.375rem;
+  padding: 2rem;
 }
 
 .card .card-footer {
