@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Axios from "axios";
 import SupervisorHeader from "./Headers/SupervisorHeader";
 import Header from "../Header";
@@ -21,12 +21,12 @@ const Supervisor = () => {
 //THIS GET REQUEST DEFINES THE setReimbursementForm TO GRAB ALL THE DATA THAT THE GET REQUEST MAKES
 //THE QUERY FOR THIS GET REQUEST IS 'SELECT * FROM formdetails ' CAN BE CHANGE TO SAY WHERE empid = $1 
 //BUT I DONT KNOW HOW TO SEND THE CORRECT empid INTO THE QUERY    
+useEffect(() =>{
 
-    const getForm = () => {
         Axios.get("http://localhost:3001/supervisor").then((response) => {
           setReimbursementForm(response.data);
         });
-      };
+    });
   // THIS PUT REQUESTS UPDATES THE REQUEST BASED ON THE id SO FIRST IT GETS THE id ON THE REQUEST YOURE UPDATING 
   //THEN IT UPDATES THE COMMENT SECTION. NOTICT THAT IT SAYS comments: newComments BECAUSE THAT IS THE CHANGE
   //WE CAN ADD ANOTHER CHANGE FOR APPROVE OR DENNIED THE EXACT SAME WAY.
@@ -89,7 +89,7 @@ const Supervisor = () => {
         <div className="information">
             
 {/* button might want to just have it load automatically with the page or make it a tab? */}
-<button className="pending" onClick={getForm}>Pending Requests</button>
+{/* <button className="pending" onClick={getForm}>Pending Requests</button> */}
 
 
 

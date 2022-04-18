@@ -1,5 +1,5 @@
 import { Link,Outlet } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Axios from "axios";
 import moment from "moment";
 import Header from "../Header";
@@ -24,11 +24,11 @@ const BenefitsCoor= () => {
 
     
 
-    const getForm = () => {
-        Axios.get("http://localhost:3001/benefitscoor").then((response) => {
+    useEffect(() =>{
+      Axios.get("http://localhost:3001/benefitscoor").then((response) => {
           setReimbursementForm(response.data);
         });
-      };
+      });
     
       const updateComments = (id) => {
         Axios.put(`http://localhost:3001/benefits/${id}`, { id: id ,  supermessage: newSuperMessage, status: newStatus}).then(
@@ -84,14 +84,11 @@ const BenefitsCoor= () => {
          sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
      </div>
 
-
-
         <div className="App">
         <div className="information">
-            <h3>BenefitsCoor Zone</h3> 
             
   
-      <button className="pending" onClick={getForm}>Pending Requests</button>
+      {/* <button className="pending" onClick={getForm}>Pending Requests</button> */}
       {/* just a link to not get stuck */}
 
 
