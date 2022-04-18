@@ -46,7 +46,7 @@ function Home(){
 </nav>
             
               
-
+<div class="card-container">
 
 <div class="card" >
   
@@ -117,7 +117,7 @@ function Home(){
   </div>
 </div>
            
-            
+</div>           
          
             
   

@@ -98,8 +98,10 @@ return (
          
          <h5>What to know prior to filling out the form: </h5>
            <p>Audacity reimburses up to $4500/annually in educational expenses. Courses taken must be relevant to your career path or part of a degree plan related to your career path.
-            If you have any questions or concerns of whether your intended course would be approved, speak to your supervisor <em>prior</em> to attending the course. Audacity also has a 
-            list of pre-approved courses in Health, Wellness, Mental Health and Family Life. Courses not relevant to your career path or not on the pre-approved list are subject to non-approval. </p>
+            If you have any questions or concerns of whether your intended course would be approved, please refer to the Education section of your current contract or 
+            speak to your supervisor <em>prior</em> to attending the course. Audacity also has a list of pre-approved courses in Health, Wellness, Mental Health and Family Life. 
+            Courses not relevant to your career path or not on the pre-approved list are subject to non-approval. 
+             </p>
             <h6><Link to="/ReimbursmentForm"> Click To Fill Out A Reimbursment Request</Link></h6>
         </div>
 
