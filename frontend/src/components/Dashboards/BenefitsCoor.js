@@ -6,7 +6,7 @@ import BenefitsCoorHeader from "./Headers/BenefitsCoorHeader";
 import Header from "../Header";
 import Footer from "../Footer";
 import Archive from "./Archive";
-
+import BenifitHeader from "./Headers/BenifitscoorHeader";
 
 
 
@@ -72,8 +72,8 @@ const BenefitsCoor= () => {
       return (
         <>
         <Header />
-        <BenefitsCoorHeader />
-        {/* <div className="title"> Benefits Coordinator Dashboard</div> */}
+        <BenifitHeader />
+
         <div className= "container" id="container1">
        <h3> Hello and Welcome To Your Benefits Coordinator Dashboard </h3>
        <p>GUIDELINES FOR RESPONDING TO REIMBURSMENT REQUESTS</p>
