@@ -108,9 +108,10 @@ function Login() {
       </nav>
             <Outlet />
 
-    <div className="container" id="container1">
+    <div className="containersml" >
     
       <form onSubmit={handleSubmit}>
+        <span>
         <div className="input-container">
           <label>Username </label>
           <input type="text" name="uname" required />
@@ -121,14 +122,13 @@ function Login() {
           <input type="password" name="pass" required />
           {renderErrorMessage("pass")}
         </div>
+        <br></br>
         <div className="button-container">
-          <input type="submit" />
+          <input class="button" type="submit" />
         </div>
+        
         {/* Remove home change to registration page? */}
-        <div>
-       
-     
-        </div>
+        </span>
       </form>
     </div>
     </>

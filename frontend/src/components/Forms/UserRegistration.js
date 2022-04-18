@@ -64,7 +64,7 @@ function UserRegistration() {
     const renderForm = (
 
      
-        <div className="container" id="container1">
+        <div className="containermed" id="container1">
           <form onSubmit={handleSubmit}>
              <div className="input-container">
               <label>Employee Id # </label>
@@ -89,8 +89,9 @@ function UserRegistration() {
               <input type="password" name="password" required />
               {renderErrorMessage("pass")}
             </div>
+            <br></br>
             <div className="button-container">
-              <input type="submit" />
+              <input class="button" type="submit" />
             </div>
             <div>
          
@@ -107,6 +108,8 @@ function UserRegistration() {
         <div className="title">User Registration</div>
         <nav className="navigate">  
            <Link to="/"> Home</Link>
+
+           
        </nav>
         {isSubmitted ? 
                      <div>User Registered successfully </div>   
