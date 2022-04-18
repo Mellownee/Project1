@@ -85,11 +85,7 @@ function ReimbursmentForm() {
           
           <p>Guidelines for filling out the form....
             
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate 
-            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-            sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            You are responsible for keeping track of the amounts previously approved. You </p>
         </div>
         <h5 className="backlink"> <Link to="/Employee"> Back to Dashboard</Link> </h5>
 
@@ -102,7 +98,7 @@ function ReimbursmentForm() {
       <form onSubmit={addForm}>
 
         <div>
-        <label>Employee Id: </label> 
+        <label class="col-sm-2">Employee Id: </label> 
         <input className="rf"
           type="text" name="pass" required
           onChange={(event) => {
@@ -112,7 +108,7 @@ function ReimbursmentForm() {
 </div>
 
 <div>
-        <label> Password: </label>
+        <label class="col-sm-2" > Password: </label>
         <input  className="rf"
           type="password" name="pass" required 
           onChange={(event) => {
@@ -123,7 +119,7 @@ function ReimbursmentForm() {
         </div>
 
         <div>
-        <label>Employee Name: </label>
+        <label class="col-sm-2">Employee Name: </label>
         <input className="rf"
           type="text" name="pass" required
           onChange={(event) => {
@@ -133,7 +129,7 @@ function ReimbursmentForm() {
         </div>
 
 <div>
-        <label>Department:  </label>
+        <label class="col-sm-2">Department:  </label>
         <input className="rf"
           type="text" name="pass" required
           onChange={(event) => {
@@ -143,7 +139,7 @@ function ReimbursmentForm() {
         </div>
 
         <div>
-        <label>Title: </label>
+        <label class="col-sm-2">Title: </label>
         <input className="rf"
           type="text" name="pass" required
           onChange={(event) => {
@@ -154,7 +150,7 @@ function ReimbursmentForm() {
 
 
         <div>
-        <label>Course/Event Name: </label>
+        <label class="col-sm-2">Course/Event Name: </label>
         <input className="rf"
           type="text" name="pass"required
           onChange={(event) => {
@@ -164,7 +160,7 @@ function ReimbursmentForm() {
         </div>
 
         <div>
-        <label>Instructor/Facilitator:  </label>
+        <label class="col-sm-2">Instructor/Group:  </label>
         <input className="rf"
           type="text" name="pass" required
           onChange={(event) => {
@@ -175,7 +171,7 @@ function ReimbursmentForm() {
 
 
         <div>
-        <label>Start Date:  </label>
+        <label class="col-sm-2">Start Date:  </label>
         <input className="rf"
           type="date" name="pass" required
           onChange={(event) => {
@@ -185,7 +181,7 @@ function ReimbursmentForm() {
         </div>
 
         <div>
-        <label>End Date:  </label>
+        <label class="col-sm-2">End Date:  </label>
         <input className="rf"
           type="date" name="pass" required
           onChange={(event) => {
@@ -195,7 +191,7 @@ function ReimbursmentForm() {
         </div>
 
         <div>
-        <label> Course/Event Name:  </label>
+        <label class="col-sm-2"> Course/Event Name:  </label>
         <input className="rf"
           type="text"
           
@@ -203,7 +199,7 @@ function ReimbursmentForm() {
         </div>
 
 <div>
-        <label> Course/Event Description: </label>
+        <label class="col-sm-2"> Course/Event Description: </label>
         <textarea rows="5" cols="50" className="date"
           type="text" name="pass" required
           onChange={(event) => {
@@ -213,7 +209,7 @@ function ReimbursmentForm() {
 </div>
 
 <div>
-        <label> Cost: </label>
+        <label class="col-sm-2"> Cost: </label>
         <input className="rf"
           type="number"
           
@@ -221,7 +217,7 @@ function ReimbursmentForm() {
         </div>
 
         <div>
-        <label> Total: </label>
+        <label class="col-sm-2"> Total: </label>
         <input className="rf"
           type="number" name="pass" required
           onChange={(event) => {
@@ -231,7 +227,7 @@ function ReimbursmentForm() {
         </div>
 
         <div>
-        <label>Certification Name: </label>
+        <label class="col-sm-2">Certification Name: </label>
         <input className="rf"
           type="text" name="pass" required
           onChange={(event) => {
@@ -241,7 +237,7 @@ function ReimbursmentForm() {
         </div>
 
         <div>
-        <label>Comments:  </label>
+        <label class="col-sm-2">Comments:  </label>
         <textarea rows="5" cols="50" className="rf"
           type="text" name="pass" required
           onChange={(event) => {
@@ -253,7 +249,7 @@ function ReimbursmentForm() {
 
 
         <div>
-        <label>Enter full name to sign: </label>
+        <label class="col-sm-2">Enter full name to sign: </label>
         <input className="rf"
           type="text" name="pass" required
           onChange={(event) => {
@@ -263,7 +259,7 @@ function ReimbursmentForm() {
       </div>
 
 <div>
-        <label> Today's Date:  </label>
+        <label class="col-sm-2"> Today's Date:  </label>
         <input className="rf"
           type="date" name="pass"required
           onChange={(event) => {
@@ -274,7 +270,7 @@ function ReimbursmentForm() {
 
 
 
-        <button className="button" type="submit"> Submit </button>
+        <button className="button" type="submit" class="btn btn-success"> Submit </button>
         </form>
       </div>
 

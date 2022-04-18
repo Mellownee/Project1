@@ -95,14 +95,12 @@ return (
      
         <div className= "container" id="container1">
           <h4> Hello and Welcome To Your Employee Dashboard </h4>
-          <h6><Link to="/ReimbursmentForm"> Click To Fill Out A Reimbursment Request</Link></h6>
-          <p>Reasons why your request may be in pending status...
-            
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate 
-            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-            sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+         
+         <h5>What to know prior to filling out the form: </h5>
+           <p>Audacity reimburses up to $4500/annually in educational expenses. Courses taken must be relevant to your career path or part of a degree plan related to your career path.
+            If you have any questions or concerns of whether your intended course would be approved, speak to your supervisor <em>prior</em> to attending the course. Audacity also has a 
+            list of pre-approved courses in Health, Wellness, Mental Health and Family Life. Courses not relevant to your career path or not on the pre-approved list are subject to non-approval. </p>
+            <h6><Link to="/ReimbursmentForm"> Click To Fill Out A Reimbursment Request</Link></h6>
         </div>
 
 
