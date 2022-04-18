@@ -101,7 +101,7 @@ const Manager = () => {
         <div className="information">
             
 {/* button might want to just have it load automatically with the page or make it a tab? */}
-      <button onClick={getForm}>Pending Requests</button>
+      <button className="pending" onClick={getForm}>Pending Requests</button>
       {/* just a link to not get stuck */}
 
         {/* THIS IS HOW THE GET REQUEST IS DIPLAYED THEY CAN BE ON THE SAME LINE OR IN A PARAGRAPH FORM I JUST LISTED THEM TO TELL THEM APART*/}
@@ -135,9 +135,11 @@ const Manager = () => {
                 </p>
                 <p>-------------------------------------------------------------------------------------------------</p>
               </blockquote>
+              <div className= "containersml2">
+
               <div>
-              <h6>Enter Pending Aproved or Denied?</h6>
-            <input
+              <h6>Enter Pending, Aproved or Denied?</h6>
+            <input className="update"
                 type="text"
                 placeholder="REQUIRED"
                 required
@@ -146,7 +148,7 @@ const Manager = () => {
                 }}
               />
                 <h6>Does The Benefits Coordinator Need to Review?</h6>
-            <input
+            <input className="update"
                 type="text"
                 placeholder="YES or NO"
                 required
@@ -155,7 +157,7 @@ const Manager = () => {
                 }}
               />
                 <h6>Leave a Comment</h6>
-              <input
+              <textarea rows="3" cols="50" 
                 type="text"
                 placeholder="REQUIRED"
                 required
@@ -164,17 +166,16 @@ const Manager = () => {
                 }}
               />
               
-              <button
+              <button className="button"
                 onClick={() => {
                   updateComments(val.id);
                 }}
               >
-                {" "}
                 Update
               </button>
 
             </div>
-
+</div>
 
 
               </div>

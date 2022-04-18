@@ -94,8 +94,8 @@ return (
   <div className="title"> Employee Dashboard</div>
      
         <div className= "container" id="container1">
-          <h3> Hello and Welcome To Your Employee Dashboard </h3>
-          <h5><Link to="/ReimbursmentForm"> Click To Fill Out A Reimbursment Request</Link></h5>
+          <h4> Hello and Welcome To Your Employee Dashboard </h4>
+          <h6><Link to="/ReimbursmentForm"> Click To Fill Out A Reimbursment Request</Link></h6>
           <p>Reasons why your request may be in pending status...
             
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
@@ -109,9 +109,9 @@ return (
 
 
 
-    <div className= "container" id="container1">
+    <div className= "containersml1" id="container1">
     <div className="form">
-    <h5>Enter your employee ID and password to see your reimbursment history. </h5>
+    <p>Enter your employee ID and password to see your reimbursment history. </p>
 
     <form onSubmit={getForm}>
       <div className="input-container">
@@ -130,8 +130,9 @@ return (
         {renderErrorMessage("pass")}
         
       </div>
+      <br></br>
       <div className="button-container"> 
-        <input type="submit" />
+        <input class="button" type="submit" />
       </div>
      
     </form>
@@ -162,7 +163,7 @@ return (
                 }}
               >
                 <div key={val.id}>
-                <h5>Date Submitted: {moment(val.todaysdate).format("MM/DD/YYYY")}</h5>
+                <h6>Date Submitted: {moment(val.todaysdate).format("MM/DD/YYYY")}</h6>
                 <p><b>{val.fullname}: </b>{val.dept}, {val.title} <br></br>
                 <b>Details of course/event:</b> <br></br>
                 Dates Attended: {moment(val.startdate).format("MM/DD/YYYY")}-{moment(val.enddate).format("MM/DD/YYYY")} <br></br>
@@ -175,7 +176,7 @@ return (
 
                  </p>
                 <p>-------------------------------------------------------------------------------------------------</p>
-                <button
+                <button class="del"
                   onClick={() => {
                     deleteForm(val.id);
                   }}

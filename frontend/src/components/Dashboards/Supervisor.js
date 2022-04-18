@@ -90,7 +90,7 @@ const Supervisor = () => {
         <div className="information">
             
 {/* button might want to just have it load automatically with the page or make it a tab? */}
-<button onClick={getForm}>Pending Requests</button>
+<button className="pending" onClick={getForm}>Pending Requests</button>
 
 
 
@@ -124,10 +124,11 @@ const Supervisor = () => {
                 </p>
                 <p>-------------------------------------------------------------------------------------------------</p>
               </blockquote>
+              <div className= "containersml2">
               <div>
-                <h6>Enter Pending Approved or Denied?</h6>
-            <input
-                type="text"
+                <h6>Enter Pending, Approved or Denied?</h6>
+            <input className="update"
+                type="text" 
                 placeholder="REQUIRED"
                 required
 
@@ -137,7 +138,7 @@ const Supervisor = () => {
               />
                 <h6>Does The Manager Need to Review?</h6>
 
-            <input
+            <input className="update"
                 type="text"
                 placeholder="YES or NO"
                 required
@@ -148,7 +149,7 @@ const Supervisor = () => {
               />
                 <h6>Leave a Comment</h6>
 
-              <input
+              <textarea rows="3" cols="50" 
                 type="text"
                 placeholder="REQUIRED"
                 required
@@ -157,7 +158,7 @@ const Supervisor = () => {
                 }}
               />
               
-              <button
+              <button className="button"
                 onClick={() => {
                   updateComments(val.id);
                 }}
@@ -165,6 +166,7 @@ const Supervisor = () => {
                 Submit
               </button>
 
+            </div>
             </div>
 
 

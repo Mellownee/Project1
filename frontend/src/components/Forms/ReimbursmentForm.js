@@ -91,10 +91,10 @@ function ReimbursmentForm() {
             velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
             sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
-        <h4 className="backlink"> <Link to="/Employee"> Back to Dashboard</Link> </h4>
+        <h5 className="backlink"> <Link to="/Employee"> Back to Dashboard</Link> </h5>
 
 
-    <div className="container" id="container1">
+    <div className="containermed1" id="container1">
 
     {/* THEN I PUT THE FUNCTION IN THE FORM INSTEAD OF THE BUTTON BUT IT STILL WORKED IN THE BUTTON
     ALSO THE REQUIED ONLY WORKS WHEN THE SUBMIT IS INPUT NOT BUTTON */}
@@ -102,16 +102,18 @@ function ReimbursmentForm() {
       <form onSubmit={addForm}>
 
         <div>
-        <label>Employee Id: </label>
-        <input
+        <label>Employee Id: </label> 
+        <input className="rf"
           type="text" name="pass" required
           onChange={(event) => {
             setEmpid(event.target.value);
           }}
         />
+</div>
 
+<div>
         <label> Password: </label>
-        <input
+        <input  className="rf"
           type="password" name="pass" required 
           onChange={(event) => {
             setPassword(event.target.value);
@@ -122,7 +124,7 @@ function ReimbursmentForm() {
 
         <div>
         <label>Employee Name: </label>
-        <input
+        <input className="rf"
           type="text" name="pass" required
           onChange={(event) => {
             setFullname(event.target.value);
@@ -130,9 +132,9 @@ function ReimbursmentForm() {
         />
         </div>
 
-        <div>
+<div>
         <label>Department:  </label>
-        <input
+        <input className="rf"
           type="text" name="pass" required
           onChange={(event) => {
             setDept(event.target.value);
@@ -142,7 +144,7 @@ function ReimbursmentForm() {
 
         <div>
         <label>Title: </label>
-        <input
+        <input className="rf"
           type="text" name="pass" required
           onChange={(event) => {
             setTitle(event.target.value);
@@ -153,7 +155,7 @@ function ReimbursmentForm() {
 
         <div>
         <label>Course/Event Name: </label>
-        <input
+        <input className="rf"
           type="text" name="pass"required
           onChange={(event) => {
             setEventname(event.target.value);
@@ -163,7 +165,7 @@ function ReimbursmentForm() {
 
         <div>
         <label>Instructor/Facilitator:  </label>
-        <input
+        <input className="rf"
           type="text" name="pass" required
           onChange={(event) => {
             setFacilitator(event.target.value);
@@ -174,7 +176,7 @@ function ReimbursmentForm() {
 
         <div>
         <label>Start Date:  </label>
-        <input
+        <input className="rf"
           type="date" name="pass" required
           onChange={(event) => {
             setStartdate(event.target.value);
@@ -184,7 +186,7 @@ function ReimbursmentForm() {
 
         <div>
         <label>End Date:  </label>
-        <input
+        <input className="rf"
           type="date" name="pass" required
           onChange={(event) => {
             setEnddate(event.target.value);
@@ -194,20 +196,25 @@ function ReimbursmentForm() {
 
         <div>
         <label> Course/Event Name:  </label>
-        <input
+        <input className="rf"
           type="text"
           
         />
+        </div>
+
+<div>
         <label> Course/Event Description: </label>
-        <input
+        <textarea rows="5" cols="50" className="date"
           type="text" name="pass" required
           onChange={(event) => {
             setDescription(event.target.value);
           }}
         />
+</div>
 
+<div>
         <label> Cost: </label>
-        <input
+        <input className="rf"
           type="number"
           
         />
@@ -215,7 +222,7 @@ function ReimbursmentForm() {
 
         <div>
         <label> Total: </label>
-        <input
+        <input className="rf"
           type="number" name="pass" required
           onChange={(event) => {
             setTotal(event.target.value);
@@ -225,7 +232,7 @@ function ReimbursmentForm() {
 
         <div>
         <label>Certification Name: </label>
-        <input
+        <input className="rf"
           type="text" name="pass" required
           onChange={(event) => {
             setCertificationname(event.target.value);
@@ -235,7 +242,7 @@ function ReimbursmentForm() {
 
         <div>
         <label>Comments:  </label>
-        <input
+        <textarea rows="5" cols="50" className="rf"
           type="text" name="pass" required
           onChange={(event) => {
             setEmpmessage(event.target.value);
@@ -247,15 +254,17 @@ function ReimbursmentForm() {
 
         <div>
         <label>Enter full name to sign: </label>
-        <input
+        <input className="rf"
           type="text" name="pass" required
           onChange={(event) => {
             setEmpsignature(event.target.value);
           }}
         />
-      
+      </div>
+
+<div>
         <label> Today's Date:  </label>
-        <input
+        <input className="rf"
           type="date" name="pass"required
           onChange={(event) => {
             setTodaysdate(event.target.value);
@@ -265,7 +274,7 @@ function ReimbursmentForm() {
 
 
 
-        <button type="submit"> Submit </button>
+        <button className="button" type="submit"> Submit </button>
         </form>
       </div>
 

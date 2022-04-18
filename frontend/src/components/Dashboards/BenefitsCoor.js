@@ -4,6 +4,7 @@ import Axios from "axios";
 import moment from "moment";
 import Header from "../Header";
 import Footer from "../Footer";
+import Archive from "./Archive"
 
 
 
@@ -87,7 +88,7 @@ const BenefitsCoor= () => {
             <h3>BenefitsCoor Zone</h3> 
             
   
-      <button onClick={getForm}>Pending Requests</button>
+      <button className="pending" onClick={getForm}>Pending Requests</button>
       {/* just a link to not get stuck */}
 
 
@@ -118,10 +119,12 @@ const BenefitsCoor= () => {
                 </p>
                 <p>-------------------------------------------------------------------------------------------------</p>
               </blockquote>
-              <div>
-              <h6>Enter Pending Approved or Denied?</h6>
+              <div className= "containersml3">
 
-            <input
+              <div>
+              <h6>Enter Pending, Approved or Denied?</h6>
+
+            <input className="update"
                 type="text"
                 placeholder="REQUIRED"
                 required
@@ -130,8 +133,8 @@ const BenefitsCoor= () => {
                 }}
               />
 
-<h6>Leave a Comment</h6>
-              <input
+            <h6>Leave a Comment</h6>
+              <textarea rows="3" cols="50"
                 type="text"
                 placeholder="REQUIRED"
                 required
@@ -145,12 +148,11 @@ const BenefitsCoor= () => {
                   updateComments(val.id);
                 }}
               >
-                {" "}
                 Update
               </button>
 
             </div>
-
+</div>
 
 
               </div>
@@ -162,6 +164,8 @@ const BenefitsCoor= () => {
 </div>
 
   </div>
+  <h3 className="card-header bg-dark text-light p-2 m-0"></h3>
+  <Archive />
   <Footer />
 
   </>
