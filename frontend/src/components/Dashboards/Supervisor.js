@@ -73,7 +73,6 @@ const Supervisor = () => {
         <Header />
 
         <SupervisorHeader/>
-        <div className="title"> Supervisor Dashboard</div>
      
      <div className= "container" id="container1">
        <h3> Hello and Welcome To Your Supervisor Dashboard </h3>
