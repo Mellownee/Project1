@@ -3,6 +3,8 @@ import { Link} from "react-router-dom";
 import { useState } from "react";
 import Axios from "axios";
 import { useNavigate } from "react-router";
+import Footer from "../Footer";
+import Header from "../Header";
 
 
 
@@ -56,6 +58,7 @@ function ReimbursmentForm() {
         }).then((res) => {
           console.log(res);
           navigate("/Employee");
+          
         });
       };
     
@@ -73,15 +76,23 @@ function ReimbursmentForm() {
   return (
 
 <>
-
-<div className="title">Dashboard </div>
+<Header /> 
 
      
-<nav className="navigate">  
-     <Link to="/Employee"> Back to Dashboard</Link> 
 
+ <div className= "container" id="container1">
+          <h3> Reimbursment Request Form </h3>
+          
+          <p>Guidelines for filling out the form....
+            
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate 
+            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+            sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <h4 className="backlink"> <Link to="/Employee"> Back to Dashboard</Link> </h4>
 
- </nav>
 
     <div className="container" id="container1">
 
@@ -268,9 +279,8 @@ function ReimbursmentForm() {
 
         {/* just a link to not get stuck */}
 
-
    </div>
-
+   <Footer />
 
 
         

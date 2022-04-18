@@ -104,7 +104,7 @@ function Login() {
    <>
 
 <nav className="navigate">  
-          <Link to="/"> Home</Link> 
+          <Link to="/userregistration"> Register First?</Link> 
       </nav>
             <Outlet />
 

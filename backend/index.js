@@ -152,8 +152,8 @@ app.post('/registration',(req,res)=>{
             throw error;
         }
         let id =results.rows[0].id;
-        poolconn.query('INSERT INTO users (empid, username, password) VALUES ($1,$2,$3)',
-        [empid, username, password], (error,results)=>{
+        poolconn.query('INSERT INTO users (empid, username, password, roleid) VALUES ($1,$2,$3,$4)',
+        [empid, username, password, 1], (error,results)=>{
         if(error){          
             throw error;
         }
@@ -229,10 +229,10 @@ app.put('/manager/:Id',(req,res)=>{
 //http://localhost:3001/update
 app.put('/benefits/:Id',(req,res)=>{
     const id =req.params.Id;
-    let {status, supermessage, benefitscoor} = req.body;
+    let {status, supermessage } = req.body;
    //INSERT or UPDATE SQL statements we can use to create or update record in table respectively
     //SINCE WERE CHECKING THE ID MATCHES FIRST IT NEEDS TO BE $1 THIS GOT ME STUCK FOR 4 DAYS!!!! 
-   poolconn.query('UPDATE reimbursmentform SET status= $2, supermessage=$3, benefitscoor=$4 WHERE id=$1',[id, status, supermessage,benefitscoor],(error,results)=>{
+   poolconn.query('UPDATE reimbursmentform SET status= $2, supermessage=$3 WHERE id=$1',[id, status, supermessage],(error,results)=>{
         if(error){
             console.log(error);
             throw error;

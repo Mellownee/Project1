@@ -1,5 +1,6 @@
 import React, { useState} from "react";
-import { Link,Outlet } from "react-router-dom";
+import { Link,Outlet, useNavigate } from "react-router-dom";
+
 
 import axios from 'axios';
 
@@ -9,6 +10,7 @@ function UserRegistration() {
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState();
   
+  const navigate = useNavigate();
 
   const errors = {
     empid: "this eployee id is already registered",
@@ -44,6 +46,10 @@ function UserRegistration() {
             setIsSubmitted(true);
         })
        }
+    }).then((res) => {
+      console.log(res);
+      navigate("/login");
+      
     });
     
   };
