@@ -3,6 +3,9 @@ import { useState } from "react";
 import Axios from "axios";
 import ManagerHeader from "./Headers/ManagerHeader"
 import moment from "moment";
+import Header from "../Header";
+import Footer from "../Footer";
+
 
 const Manager = () => {
 
@@ -82,20 +85,23 @@ const Manager = () => {
 
     return (
         <>
-        <ManagerHeader/>
-        <section>
-            <h1>Manager Page</h1>
-            <br />
-            <p>You must have been assigned an Manager role.</p>
-            <div className="flexGrow">
-                <Link to="/">Home</Link>
-            </div>
-        </section>
+        <Header />
+        <ManagerHeader/>     
+     <div className= "container" id="container1">
+       <h3> Hello and Welcome To Your Manager Dashboard </h3>
+       <p>GUIDELINES FOR RESPONDING TO REIMBURSMENT REQUESTS
+         
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+         labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+         nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate 
+         velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+         sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+     </div>        
         <div className="App">
         <div className="information">
             
 {/* button might want to just have it load automatically with the page or make it a tab? */}
-      <button onClick={getForm}>Pending Requests</button>
+      <button className="pending" onClick={getForm}>Pending Requests</button>
       {/* just a link to not get stuck */}
 
         {/* THIS IS HOW THE GET REQUEST IS DIPLAYED THEY CAN BE ON THE SAME LINE OR IN A PARAGRAPH FORM I JUST LISTED THEM TO TELL THEM APART*/}
@@ -124,48 +130,52 @@ const Manager = () => {
                 "{val.description}"<br></br>
                 {val.certificationname} <b>Total: ${val.total}</b><br></br>
                 Employee Comments: {val.empmessage} <br></br>
-                <b>Status: {val.status}</b>
-                {val.supermessage}
+                <b>Status: {val.status}</b><br></br>
+                <b>Admin Comments: {val.supermessage}</b>
                 </p>
                 <p>-------------------------------------------------------------------------------------------------</p>
               </blockquote>
-              <div>
+              <div className= "containersml2">
 
-            <input
+              <div>
+              <h6>Enter Pending, Aproved or Denied?</h6>
+            <input className="update"
                 type="text"
-                placeholder="pending"
+                placeholder="REQUIRED"
+                required
                 onChange={(event) => {
                   setNewStatus(event.target.value);
                 }}
               />
-
-            <input
+                <h6>Does The Benefits Coordinator Need to Review?</h6>
+            <input className="update"
                 type="text"
-                placeholder="benefitcoor? yes or no"
+                placeholder="YES or NO"
+                required
                 onChange={(event) => {
                     setNewBenifitsCoor(event.target.value);
                 }}
               />
-
-              <input
+                <h6>Leave a Comment</h6>
+              <textarea rows="3" cols="50" 
                 type="text"
-                placeholder="comments"
+                placeholder="REQUIRED"
+                required
                 onChange={(event) => {
                   setNewSuperMessage(event.target.value);
                 }}
               />
               
-              <button
+              <button className="button"
                 onClick={() => {
                   updateComments(val.id);
                 }}
               >
-                {" "}
                 Update
               </button>
 
             </div>
-
+</div>
 
 
               </div>
@@ -177,6 +187,7 @@ const Manager = () => {
 </div>
 
   </div>
+  <Footer />
 
   </>
 

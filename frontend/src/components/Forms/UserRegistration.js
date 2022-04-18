@@ -1,5 +1,6 @@
 import React, { useState} from "react";
-import { Link,Outlet } from "react-router-dom";
+import { Link,Outlet, useNavigate } from "react-router-dom";
+
 
 import axios from 'axios';
 
@@ -9,6 +10,7 @@ function UserRegistration() {
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState();
   
+  const navigate = useNavigate();
 
   const errors = {
     empid: "this eployee id is already registered",
@@ -44,6 +46,10 @@ function UserRegistration() {
             setIsSubmitted(true);
         })
        }
+    }).then((res) => {
+      console.log(res);
+      navigate("/login");
+      
     });
     
   };
@@ -58,7 +64,7 @@ function UserRegistration() {
     const renderForm = (
 
      
-        <div className="container" id="container1">
+        <div className="containermed" id="container1">
           <form onSubmit={handleSubmit}>
              <div className="input-container">
               <label>Employee Id # </label>
@@ -80,11 +86,12 @@ function UserRegistration() {
             </div>
             <div className="input-container">
               <label>Password </label>
-              <input type="pass" name="password" required />
+              <input type="password" name="password" required />
               {renderErrorMessage("pass")}
             </div>
+            <br></br>
             <div className="button-container">
-              <input type="submit" />
+              <input class="button" type="submit" />
             </div>
             <div>
          
@@ -101,6 +108,8 @@ function UserRegistration() {
         <div className="title">User Registration</div>
         <nav className="navigate">  
            <Link to="/"> Home</Link>
+
+           
        </nav>
         {isSubmitted ? 
                      <div>User Registered successfully </div>   

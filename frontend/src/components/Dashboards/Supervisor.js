@@ -2,6 +2,9 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import Axios from "axios";
 import SupervisorHeader from "./Headers/SupervisorHeader";
+import Header from "../Header";
+import Footer from "../Footer";
+import moment from "moment";
 
 const Supervisor = () => {
 
@@ -65,25 +68,32 @@ const Supervisor = () => {
 
 
 
-
     return (
         <>
+        <Header />
+
         <SupervisorHeader/>
-        <section>
-            <h1>Supervisor Page</h1>
-            <br />
-            <p>You must have been assigned an Supervisor role.</p>
-            <div className="flexGrow">
-                <Link to="/">Home</Link>
-            </div>
-        </section>
+        <div className="title"> Supervisor Dashboard</div>
+     
+     <div className= "container" id="container1">
+       <h3> Hello and Welcome To Your Supervisor Dashboard </h3>
+       <p>GUIDELINES FOR RESPONDING TO REIMBURSMENT REQUESTS
+         
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+         labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+         nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate 
+         velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+         sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+     </div>
 
         <div className="App">
         <div className="information">
-            <h3>Supervisor Zone</h3> 
             
 {/* button might want to just have it load automatically with the page or make it a tab? */}
-<button onClick={getForm}>Pending Requests</button>
+<button className="pending" onClick={getForm}>Pending Requests</button>
+
+
+
       {/* just a link to not get stuck */}
 
         {/* THIS IS HOW THE GET REQUEST IS DIPLAYED THEY CAN BE ON THE SAME LINE OR IN A PARAGRAPH FORM I JUST LISTED THEM TO TELL THEM APART*/}
@@ -92,63 +102,71 @@ const Supervisor = () => {
 
             
             <div className="form">
+            <blockquote
+                className="p-4"
+                style={{
+                  fontSize: '1.0rem',
+                  fontStyle: 'italic',
+                  border: '2px dotted #1a1a1a',
+                  lineHeight: '1.5',
+                }}
+              >
+                <h5>Date Submitted: {moment(val.todaysdate).format("MM/DD/YYYY")}</h5>
+                <p><b>{val.fullname}: </b>{val.dept}, {val.title} <br></br>
+                <b>Details of course/event:</b> <br></br>
+                Dates Attended: {moment(val.startdate).format("MM/DD/YYYY")}-{moment(val.enddate).format("MM/DD/YYYY")} <br></br>
+                <b>{val.eventname}</b> by. <b>{val.facilitator}</b>: <br></br>
+                "{val.description}"<br></br>
+                {val.certificationname} <b>Total: ${val.total}</b><br></br>
+                Employee Comments: {val.empmessage} <br></br>
+                <b>Status: {val.status}</b><br></br>
+                <b>Admin Comments: {val.supermessage}</b>
+                </p>
+                <p>-------------------------------------------------------------------------------------------------</p>
+              </blockquote>
+              <div className= "containersml2">
               <div>
-              <h3>Full Name: {val.fullname}</h3>
-                <h3>dept: {val.dept}</h3>
-                <h3>title: {val.title}</h3>
-                <h3>eventname: {val.eventname}</h3>
-                <h3>facilitator: {val.facilitator}</h3>
-                <h3>startdate: {val.startdate}</h3>
-                <h3>enddate: {val.enddate}</h3>
-                <h3>eventname: {val.eventname}</h3>
-                <h3>description: {val.description}</h3>
-                <h3>total: {val.total}</h3>
-                <h3>certificationname: {val.certificationname}</h3>
-                <h3>empmessage: {val.empmessage}</h3>
-                <h3>empsignature: {val.empsignature}</h3>
-                <h3>todaysdate: {val.todaysdate}</h3>
-                <h3>status: {val.status}</h3>
-                <h3>supermessage: {val.supermessage}</h3>
-                <h3>depthead: {val.depthead}</h3>
-                <h3>benefitscoor: {val.benifitscoor}</h3>
+                <h6>Enter Pending, Approved or Denied?</h6>
+            <input className="update"
+                type="text" 
+                placeholder="REQUIRED"
+                required
 
-                <p>---------------------------------</p>
-              </div>
-              <div>
-
-            <input
-                type="text"
-                placeholder="pending"
                 onChange={(event) => {
                   setNewStatus(event.target.value);
                 }}
               />
+                <h6>Does The Manager Need to Review?</h6>
 
-            <input
+            <input className="update"
                 type="text"
-                placeholder="depthead yes or no"
+                placeholder="YES or NO"
+                required
+                
                 onChange={(event) => {
                   setNewDeptHead(event.target.value);
                 }}
               />
+                <h6>Leave a Comment</h6>
 
-              <input
+              <textarea rows="3" cols="50" 
                 type="text"
-                placeholder="comments"
+                placeholder="REQUIRED"
+                required
                 onChange={(event) => {
                   setNewSuperMessage(event.target.value);
                 }}
               />
               
-              <button
+              <button className="button"
                 onClick={() => {
                   updateComments(val.id);
                 }}
               >
-                {" "}
-                Update
+                Submit
               </button>
 
+            </div>
             </div>
 
 
@@ -170,7 +188,7 @@ const Supervisor = () => {
 
 
 
-
+<Footer />
 
 
         </>

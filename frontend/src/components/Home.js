@@ -4,7 +4,6 @@ import images from "../assets/images/traveling.jpg"
 import expenses from "../assets/images/expenses.jpg";
 import education from "../assets/images/education.jpg";
 import money from "../assets/images/money.jpg"
-
 import Footer from "./Footer";
 
 /**
@@ -21,28 +20,25 @@ function Home(){
   
   </div>
 
-< nav  className="bg-primary1 text-light mb-4 py-3 flex-row align-center">
-      <div className="container flex-row justify-space-between-lg justify-center align-center">
+< nav  className="bg-primary1 text-light mb-4 py-3 flex-row align-left">
+      <div className="container flex-row  justify-left align-left">
         
-
-<Link className="text-light" to="/UserRegistration">
-          <h1 className="m-0">UserRegistration</h1>
-        </Link>
-
-        <Link className="text-light" to="/Login">
+      <Link className="text-light" to="/Login">
           <h1 className="m-0">Login</h1>
         </Link>
 
+
+
         
          
-        <Link className="text-light" to="/Archive">
+        {/* <Link className="text-light" to="/Archive">
           <h1 className="m-0">Archive</h1>
         </Link>
+ */}
 
-
-        <Link className="text-light" to="/ReimbursmentForm">
+        {/* <Link className="text-light" to="/ReimbursmentForm">
           <h1 className="m-0">ReimbursmentForm</h1>
-        </Link>
+        </Link> */}
         
        
         </div>
@@ -53,8 +49,10 @@ function Home(){
 
 
 <div class="card" >
+  
   <div class="card-body">
-  <img className="mb-5"  src={expenses} />
+<div>
+<img className="mb-expenses "  src={expenses} />
 
     <h5 class="card-title">Why Reimbursment?</h5>
     <h6 class="card-subtitle mb-2 text-muted">We Invest In YOU!</h6>
@@ -65,12 +63,15 @@ function Home(){
 
 
      </p>
-  
+     </div>
   </div>
 </div>
+
+
 <div class="card" >
   <div class="card-body">
-        <img className="mb-5"  src={education} />
+  <img className="mb-books"  src={education} />
+
     <h5 class="card-title">Popular!!! </h5>
     <h6 class="card-subtitle mb-2 text-muted">Events &#38; Certifications</h6>
     <ul class="card-text">
@@ -93,9 +94,11 @@ function Home(){
     <p>*for more information contact your direct supervisor*</p>
   </div>
 </div>
+
+
 <div class="card" >
   <div class="card-body">
-  <img className="mb-5"  src={images} />
+  <img className="mb-plane"  src={images} />
 
     <h5 class="card-title"> Traveling Fun Facts</h5>
     <h6 class="card-subtitle mb-2 text-muted"></h6>

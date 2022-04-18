@@ -2,15 +2,18 @@ import { Link,Outlet } from "react-router-dom";
 import { useState } from "react";
 import Axios from "axios";
 import moment from "moment";
+import Header from "../Header";
+import Footer from "../Footer";
+import Archive from "./Archive"
 
 
-function BenefitsCoor(){
+
+const BenefitsCoor= () => {
 
 
 
     const [newSuperMessage, setNewSuperMessage] = useState("");
     const [newStatus, setNewStatus] = useState("");
-    const [newBenefitsCoor, setNewBenefitsCoor] = useState("");
 
     
     const [reimbursementForm, setReimbursementForm] = useState([]);
@@ -26,7 +29,7 @@ function BenefitsCoor(){
       };
     
       const updateComments = (id) => {
-        Axios.put(`http://localhost:3001/benefits/${id}`, { id: id ,  supermessage: newSuperMessage, status: newStatus, benefitscoor: newBenefitsCoor,}).then(
+        Axios.put(`http://localhost:3001/benefits/${id}`, { id: id ,  supermessage: newSuperMessage, status: newStatus}).then(
           (response) => {
             setReimbursementForm(
                 reimbursementForm.map((val) => {
@@ -49,7 +52,6 @@ function BenefitsCoor(){
                       depthead: val.depthead,
 
                       status: newStatus,
-                      benefitscoor: newBenefitsCoor,
                       supermessage: newSuperMessage,
                     }
                   : val;
@@ -65,21 +67,29 @@ function BenefitsCoor(){
 
 
       return (
+        <>
+        <Header />
+        <div className="title"> Benefits Coordinator Dashboard</div>
+        <div className= "container" id="container1">
+       <h3> Hello and Welcome To Your Benefits Coordinator Dashboard </h3>
+       <p>GUIDELINES FOR RESPONDING TO REIMBURSMENT REQUESTS
+         
+         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+         labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+         nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate 
+         velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+         sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+     </div>
+
+
+
         <div className="App">
         <div className="information">
             <h3>BenefitsCoor Zone</h3> 
             
   
-      <button onClick={getForm}>Pending Requests</button>
+      <button className="pending" onClick={getForm}>Pending Requests</button>
       {/* just a link to not get stuck */}
-      <div>
-          <nav>
-         
-                  <Link to="/"> Home</Link>
-         
-          </nav>
-          <Outlet />
-      </div>
 
 
   {reimbursementForm.map((val, key) => {
@@ -104,32 +114,30 @@ function BenefitsCoor(){
                 "{val.description}"<br></br>
                 {val.certificationname} <b>Total: ${val.total}</b><br></br>
                 Employee Comments: {val.empmessage} <br></br>
-                <b>Status: {val.status}</b>
-                {val.supermessage}
+                <b>Status: {val.status}</b><br></br>
+                <b>Comments: {val.supermessage}</b>
                 </p>
                 <p>-------------------------------------------------------------------------------------------------</p>
               </blockquote>
-              <div>
+              <div className= "containersml3">
 
-            <input
+              <div>
+              <h6>Enter Pending, Approved or Denied?</h6>
+
+            <input className="update"
                 type="text"
-                placeholder="pending"
+                placeholder="REQUIRED"
+                required
                 onChange={(event) => {
                   setNewStatus(event.target.value);
                 }}
               />
 
-            <input
+            <h6>Leave a Comment</h6>
+              <textarea rows="3" cols="50"
                 type="text"
-                placeholder="benefitcoor? yes or no"
-                onChange={(event) => {
-                    setNewBenefitsCoor(event.target.value);
-                }}
-              />
-
-              <input
-                type="text"
-                placeholder="comments"
+                placeholder="REQUIRED"
+                required
                 onChange={(event) => {
                   setNewSuperMessage(event.target.value);
                 }}
@@ -140,12 +148,11 @@ function BenefitsCoor(){
                   updateComments(val.id);
                 }}
               >
-                {" "}
                 Update
               </button>
 
             </div>
-
+</div>
 
 
               </div>
@@ -157,7 +164,11 @@ function BenefitsCoor(){
 </div>
 
   </div>
+  <h3 className="card-header bg-dark text-light p-2 m-0"></h3>
+  <Archive />
+  <Footer />
 
+  </>
 
 
 

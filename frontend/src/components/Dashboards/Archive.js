@@ -4,6 +4,7 @@ import Axios from "axios";
 import moment from "moment";
 
 
+
 function Archive(){
 
 //THIS STATE WILL GRAB THE DATA THAT WE WANT TO DISPLAY
@@ -26,14 +27,9 @@ const getForm = () => {
   return (
 
     <>
-    <div className="title">Dashboard </div>
-  
-    <nav className="navigate">  
-         <Link to="/"> Home</Link> 
-     </nav>
 
-     <div className="container" id="container1">
-        <button onClick={getForm}>Show Requests</button>
+
+        <button className="pending" onClick={getForm}>Show Archive</button>
         {/* just a link to not get stuck */}
         <div>
          
@@ -47,10 +43,12 @@ const getForm = () => {
 
            
             <div className="my-3" >
-            <h3 className="card-header bg-dark text-light p-2 m-0"></h3>
+                   <div className= "container10" id="container1">
+                    <h6> The Archive... </h6>
+                  </div>
+
                     <div>
                
-                    <div className="bg-light py-4">
                     <div className="form">
             <blockquote
                 className="p-4"
@@ -78,14 +76,12 @@ const getForm = () => {
               </div>
                   </div>
                   </div>
-                  </div>
 
           );
           
 
       
         })}
-      </div>
 
 
     </>
