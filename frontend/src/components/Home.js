@@ -9,13 +9,17 @@ import Footer from "./Footer";
 /**
  * Link is used to set the URL and keep track of brwosing history
  * Outlet - renders the current route selected
+ * added alt text for screen reader capability and titles for those who
+ * may use asistance other than screen readers.
  */
 function Home(){
     return (
         <>
 
+
 <div className="title" id="font">
-    Welcome To Audacity Reimbursment Program  <img id="money"className="mb-5"  src={money} /> 
+    Welcome To Audacity Reimbursment Program  <img id="money" className="mb-5"  src={money} alt="illustration with white background of green coin over a hand" 
+    title="illustration with white background of green coin over a hand"/> 
    
   
   </div>
@@ -52,7 +56,8 @@ function Home(){
   
   <div class="card-body">
 <div>
-<img className="mb-expenses "  src={expenses} />
+<img className="mb-expenses "  src={expenses} alt="illustration with orange background of one hand giving a money bag to another hand"
+title="illustration with orange background of one hand giving a money bag to another hand"/>
 
     <h5 class="card-title">Why Reimbursment?</h5>
     <h6 class="card-subtitle mb-2 text-muted">We Invest In YOU!</h6>
@@ -70,7 +75,8 @@ function Home(){
 
 <div class="card" >
   <div class="card-body">
-  <img className="mb-books"  src={education} />
+  <img className="mb-books"  src={education} alt="photo with bookshelves in background and stack of closed and open books in foreground"
+  title="photo with bookshelves in background and stack of closed and open books in foreground"/>
 
     <h5 class="card-title"> Popular!!! </h5>
     <h6 class="card-subtitle mb-2 text-muted">Events &#38; Certifications</h6>
@@ -98,7 +104,7 @@ function Home(){
 
 <div class="card" >
   <div class="card-body">
-  <img className="mb-plane"  src={images} />
+  <img className="mb-plane"  src={images} alt="photo of large aircraft in the sky with wheels descended" title="photo of large aircraft in the sky with wheels descended"/>
 
     <h5 class="card-title"> Traveling Fun Facts</h5>
     <h6 class="card-subtitle mb-2 text-muted"></h6>

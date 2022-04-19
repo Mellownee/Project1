@@ -147,6 +147,7 @@ h1 {
  border:solid 3px;
   
 }
+
 /* Grouping content
    ========================================================================== */
 /**
@@ -1248,6 +1249,8 @@ a:hover {
   }
 
   .card {
+    width: 90vw;
+    resize: both;
     margin-top: 2rem;
     margin-bottom: 2rem;
     font-size: 3em;
@@ -1270,10 +1273,21 @@ a:hover {
     display: grid;
     grid-template-rows: 1fr max-content;
   }
-  .mb-expenses, .mb-books, .mb-plane {
+
+  .card {
+    width: 90vw;
+    resize: vertical;
+    margin: 1rem;
+    padding: 1rem;
+  }
+  .mb-expenses, .mb-books, .mb-plane, #money {
     display: none; 
     margin: 0 auto;
     
+  }
+
+  .card-footer {
+    text-align: center;
   }
 }
 
@@ -1298,6 +1312,7 @@ a:hover {
 
 .card.card-rounded .card-header {
   border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
+  width: 100vw;
 }
 
 form {
@@ -1356,6 +1371,28 @@ label form [type='checkbox'],
 label form [type='radio'] {
   display: inline-block;
 }
+
+@media (min-width: 681px) and (max-width: 1200px) {
+  #container1 {
+    width: 100vw;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+    padding: 0.2;
+    margin-left: 2rem;
+    margin-right: none;
+  }
+}
+
+@media (min-width: 0px)and (max-width: 680px) {
+
+  #container1 {
+    width: 85vw;
+    height: fit-content;
+    padding: 0.2;
+    margin: 0.2;
+  }
+  }
 
 .container {
   
