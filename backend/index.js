@@ -102,7 +102,7 @@ app.get('/reimbursmentform/:employid',(req,res)=> {
 
 //http://localhost:3001/supervisor
 app.get('/supervisor',(req,res)=> {
-    poolconn.query(`SELECT * FROM reimbursmentform WHERE status = 'pending' ORDER BY id asc`, (error,results)=>{
+    poolconn.query(`SELECT * FROM reimbursmentform WHERE status = 'pending' Or status = 'Pending' ORDER BY id asc`, (error,results)=>{
         if(error){
             throw error;
         }
@@ -115,7 +115,7 @@ app.get('/supervisor',(req,res)=> {
 //http://localhost:3001/departmenthead
 
 app.get('/departmenthead',(req,res)=> {
-    poolconn.query(`SELECT * FROM reimbursmentform WHERE status = 'pending' AND depthead = 'yes' ORDER BY id asc`, (error,results)=>{
+    poolconn.query(`SELECT * FROM reimbursmentform WHERE (status = 'pending' Or status = 'Pending') AND (depthead = 'yes' or depthead = 'Yes') ORDER BY id asc`, (error,results)=>{
         if(error){
             throw error;
         }
@@ -128,7 +128,7 @@ app.get('/departmenthead',(req,res)=> {
 //http://localhost:3001/benefitscoor
 
 app.get('/benefitscoor',(req,res)=> {
-    poolconn.query(`SELECT * FROM reimbursmentform WHERE status = 'pending' AND benefitscoor = 'yes' ORDER BY id asc`, (error,results)=>{
+    poolconn.query(`SELECT * FROM reimbursmentform WHERE (status = 'pending' Or status = 'Pending') AND (benefitscoor = 'yes' or benefitscoor = 'Yes') ORDER BY id asc `, (error,results)=>{
         if(error){
             throw error;
         }

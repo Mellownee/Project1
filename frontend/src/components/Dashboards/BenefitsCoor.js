@@ -114,7 +114,11 @@ const BenefitsCoor= () => {
                 "{val.description}"<br></br>
                 {val.certificationname} <b>Total: ${val.total}</b><br></br>
                 Employee Comments: {val.empmessage} <br></br>
+                <p>-------------------------------------------------------------------------------------------------</p>
                 <b>Status: {val.status}</b><br></br>
+                Supervisor Review: Yes <br></br>
+                Manager Review: {val.depthead}<br></br>
+                Benefits Coordinator Review: {val.benefitscoor} <br></br>
                 <b>Comments: {val.supermessage}</b>
                 </p>
                 <p>-------------------------------------------------------------------------------------------------</p>
@@ -143,7 +147,7 @@ const BenefitsCoor= () => {
                 }}
               />
               
-              <button
+              <button className="button" 
                 onClick={() => {
                   updateComments(val.id);
                 }}

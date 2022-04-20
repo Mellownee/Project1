@@ -67,6 +67,9 @@ const getForm = () => {
                 "{val.description}"<br></br>
                 {val.certificationname} <b>Total: ${val.total}</b><br></br>
                 Employee Comments: {val.empmessage} <br></br>
+                Supervisor Approval: Yes <br></br>
+                Manager Approval: {val.depthead}<br></br>
+                Benefits Coordinator Approval: {val.benefitscoor} <br></br>
                 <b>Status: {val.status}</b>
                 {val.supermessage}
                 </p>

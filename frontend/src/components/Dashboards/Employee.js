@@ -171,8 +171,9 @@ return (
                 "{val.description}"<br></br>
                 {val.certificationname} <b>Total: ${val.total}</b><br></br>
                 Comments: {val.empmessage} <br></br>
-                <b>Status: {val.status}</b>
-                {val.supermessage}
+                <p>-------------------------------------------------------------------------------------------------</p>
+                <b>Status: {val.status}</b><br></br>
+                <b>Comments: {val.supermessage}</b>
 
                  </p>
                 <p>-------------------------------------------------------------------------------------------------</p>

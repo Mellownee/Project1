@@ -232,7 +232,7 @@ function ReimbursmentForm() {
         <div>
         <label class="col-sm-2">Certification Name: </label>
         <input className="rf"
-          type="text" name="pass" required
+          type="text" name="pass" 
           onChange={(event) => {
             setCertificationname(event.target.value);
           }}

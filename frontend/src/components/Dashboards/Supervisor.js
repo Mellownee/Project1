@@ -23,6 +23,7 @@ const Supervisor = () => {
 //BUT I DONT KNOW HOW TO SEND THE CORRECT empid INTO THE QUERY    
 useEffect(() =>{
 
+
         Axios.get("http://localhost:3001/supervisor").then((response) => {
           setReimbursementForm(response.data);
         });
@@ -31,7 +32,9 @@ useEffect(() =>{
   //THEN IT UPDATES THE COMMENT SECTION. NOTICT THAT IT SAYS comments: newComments BECAUSE THAT IS THE CHANGE
   //WE CAN ADD ANOTHER CHANGE FOR APPROVE OR DENNIED THE EXACT SAME WAY.
   // THE QUERY IS 'UPDATE formdetails SET comments=$2 WHERE id=$1'
+ 
   const updateComments = (id) => {
+
         Axios.put(`http://localhost:3001/supervisor/${id}`, { id: id ,  supermessage: newSuperMessage, status: newStatus, depthead: newDeptHead,}).then(
           (response) => {
             setReimbursementForm(
@@ -61,7 +64,12 @@ useEffect(() =>{
               })
             );
           }
-        );
+        ).then((res) => {
+          setNewSuperMessage("");
+          setNewStatus("");
+          setNewDeptHead("");
+
+        });
       };
 
 
@@ -82,7 +90,7 @@ useEffect(() =>{
            Reference the current contract for a thorough explanation of course/ job title 
            authorization. If you have any questions or concerns please speak with your Department 
            Trainer/Manager. All rejection require a comment explaining why. Feel free to contact HR via email prior to any
-            rejections to ensure the rejection is not erroneous.
+            rejections to ensure the rejection is not erroneous. *Remember Audacity reimburses up to $4500/annually in educational expenses.
          </p>
      </div>
 
@@ -119,7 +127,11 @@ useEffect(() =>{
                 "{val.description}"<br></br>
                 {val.certificationname} <b>Total: ${val.total}</b><br></br>
                 Employee Comments: {val.empmessage} <br></br>
+                <p>-------------------------------------------------------------------------------------------------</p>
                 <b>Status: {val.status}</b><br></br>
+                Supervisor Review: Yes <br></br>
+                Manager Review: {val.depthead}<br></br>
+                Benefits Coordinator Review: {val.benefitscoor} <br></br>
                 <b>Admin Comments: {val.supermessage}</b>
                 </p>
                 <p>-------------------------------------------------------------------------------------------------</p>
@@ -130,7 +142,7 @@ useEffect(() =>{
             <input className="update"
                 type="text" 
                 placeholder="REQUIRED"
-                required
+                required="true"
 
                 onChange={(event) => {
                   setNewStatus(event.target.value);
@@ -140,8 +152,8 @@ useEffect(() =>{
 
             <input className="update"
                 type="text"
-                placeholder="YES or NO"
-                required
+                placeholder="Yes or No"
+                required="true"
                 
                 onChange={(event) => {
                   setNewDeptHead(event.target.value);
@@ -152,7 +164,7 @@ useEffect(() =>{
               <textarea rows="3" cols="50" 
                 type="text"
                 placeholder="REQUIRED"
-                required
+                required="true"
                 onChange={(event) => {
                   setNewSuperMessage(event.target.value);
                 }}

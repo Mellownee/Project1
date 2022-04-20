@@ -104,6 +104,8 @@ function Login() {
    <>
 
 <nav className="navigate">  
+<Link to="/"> Home</Link> <br />
+
           <Link to="/userregistration"> Register First?</Link> 
       </nav>
             <Outlet />
@@ -138,6 +140,7 @@ function Login() {
     <div className="app">
       <div className="login-form">
         <div className="title">Sign In</div>
+
         {renderForm}
       </div>
     </div>

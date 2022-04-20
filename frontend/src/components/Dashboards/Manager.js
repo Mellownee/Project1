@@ -13,7 +13,7 @@ const Manager = () => {
 // WHEN WE FIGURE OUT HOW WE WANT THE APPROVED OR DENIED TO BE INPUTTED (CHARVAR OR TRUE OR FALSE?) WE CAN MAKE ANOTHER STATE HERE.
     const [newSuperMessage, setNewSuperMessage] = useState("");
     const [newStatus, setNewStatus] = useState("");
-    const [newBenifitsCoor, setNewBenifitsCoor] = useState("");
+    const [newBenefitsCoor, setNewBenefitsCoor] = useState("");
 
  //THIS STATE WILL GRAB THE DATA THAT WE WANT TO DISPLAY
     const [reimbursementForm, setReimbursementForm] = useState([]);
@@ -35,7 +35,7 @@ useEffect(() =>{
   // THE QUERY IS 'UPDATE formdetails SET comments=$2 WHERE id=$1'
 
       const updateComments = (id) => {
-        Axios.put(`http://localhost:3001/manager/${id}`, { id: id ,  supermessage: newSuperMessage, status: newStatus, benifitscoor: newBenifitsCoor,}).then(
+        Axios.put(`http://localhost:3001/manager/${id}`, { id: id ,  supermessage: newSuperMessage, status: newStatus, benefitscoor: newBenefitsCoor,}).then(
           (response) => {
             setReimbursementForm(
                 reimbursementForm.map((val) => {
@@ -58,7 +58,7 @@ useEffect(() =>{
                       depthead: val.depthead,
 
                       status: newStatus,
-                      benifitscoor: newBenifitsCoor,
+                      benefitscoor: newBenefitsCoor,
                       supermessage: newSuperMessage,
                     }
                   : val;
@@ -131,7 +131,11 @@ useEffect(() =>{
                 "{val.description}"<br></br>
                 {val.certificationname} <b>Total: ${val.total}</b><br></br>
                 Employee Comments: {val.empmessage} <br></br>
+                <p>-------------------------------------------------------------------------------------------------</p>
                 <b>Status: {val.status}</b><br></br>
+                Supervisor Review: Yes <br></br>
+                Manager Review: {val.depthead}<br></br>
+                Benefits Coordinator Review: {val.benefitscoor} <br></br>
                 <b>Admin Comments: {val.supermessage}</b>
                 </p>
                 <p>-------------------------------------------------------------------------------------------------</p>
@@ -139,7 +143,7 @@ useEffect(() =>{
               <div className= "containersml2">
 
               <div>
-              <h6>Enter Pending, Aproved or Denied?</h6>
+              <h6>Enter Pending, Approved or Denied?</h6>
             <input className="update"
                 type="text"
                 placeholder="REQUIRED"
@@ -151,10 +155,10 @@ useEffect(() =>{
                 <h6>Does The Benefits Coordinator Need to Review?</h6>
             <input className="update"
                 type="text"
-                placeholder="YES or NO"
+                placeholder="Yes or No"
                 required
                 onChange={(event) => {
-                    setNewBenifitsCoor(event.target.value);
+                    setNewBenefitsCoor(event.target.value);
                 }}
               />
                 <h6>Leave a Comment</h6>
@@ -167,7 +171,7 @@ useEffect(() =>{
                 }}
               />
               
-              <button className="button"
+              <button className="button" 
                 onClick={() => {
                   updateComments(val.id);
                 }}
